@@ -295,6 +295,11 @@ sub configure {
                 copy => 'META.yml',
             }
         ],
+        [
+            CopyFilesFromBuild => {
+                copy => 'Changes',
+            }
+        ],
 
         # manifest -- must come after all generated files
         'Manifest',                                           # core
