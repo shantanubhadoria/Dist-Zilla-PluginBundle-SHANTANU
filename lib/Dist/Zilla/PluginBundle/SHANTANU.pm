@@ -221,7 +221,8 @@ sub configure {
             }
         ],
 
-        'License',                                # core
+        'License',                              # core
+        'ChangelogFromGit',                     # Paste Git log to Changes file
 
         # generated t/ tests
         [ 'Test::Compile' => { fake_home => 1 } ],
