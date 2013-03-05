@@ -190,6 +190,7 @@ sub configure {
             ? 'AutoVersion'
             : [ 'Git::NextVersion' => { version_regexp => $self->version_regexp } ]
         ),
+        'PerlTidy',
 
         # contributors
         (
