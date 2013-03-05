@@ -222,7 +222,6 @@ sub configure {
         ],
 
         'License',                              # core
-        'ChangelogFromGit',                     # Paste Git log to Changes file
 
         # generated t/ tests
         [ 'Test::Compile' => { fake_home => 1 } ],
@@ -335,7 +334,11 @@ sub configure {
         ),
 
         # bumps Changes
-        'NextRelease', # core (also munges files)
+        [
+            'NextRelease' => {
+                format => '%n%v%n%n%t- %{yyyy-MM-dd HH:mm:ss VVVV}d%n',
+            },
+        ], # core (also munges files)
 
         (
             $self->no_git
@@ -376,7 +379,7 @@ taskweaver uploadtocpan dist ini
 = DESCRIPTION
 
 This is a [Dist::Zilla] PluginBundle. The way I use it. While this bundle is 
-customized to my needs, others might be better of forking this repo and 
+customized to my needs, others might be better of forking this repository and 
 modifying it to their own needs or using the more mature Plugin bundles that 
 this is derived from like the one by David Golden. 
 
@@ -401,7 +404,7 @@ testing a dist.ini without risking a real release.
 * {no_git} -- bypass all git-dependent plugins
 * {no_critic} -- omit Test::Perl::Critic tests
 * {no_spellcheck} -- omit Test::PodSpelling tests
-* {no_coverage} -- omit PodCoverage tests
+* {no_coverage} -- omit Pod Coverage tests
 
 When running without git, C<GatherDir> is used instead of C<Git::GatherDir>,
 C<AutoVersion> is used instead of C<Git::NextVersion>, and all git check and

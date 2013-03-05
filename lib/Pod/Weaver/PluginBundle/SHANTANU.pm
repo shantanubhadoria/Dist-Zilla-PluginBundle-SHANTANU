@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Pod::Weaver::PluginBundle::SHANTANU;
-#VERSION
+# VERSION
 
 use Pod::Weaver 3.101638; 
 use Pod::Weaver::Config::Assembler;
