@@ -6,7 +6,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.001
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -16,7 +16,7 @@ version 0.001
 =head1 DESCRIPTION
 
 This is a L<Dist::Zilla> PluginBundle. The way I use it. While this bundle is 
-customized to my needs, others might be better of forking this repo and 
+customized to my needs, others might be better of forking this repository and 
 modifying it to their own needs or using the more mature Plugin bundles that 
 this is derived from like the one by David Golden. 
 
@@ -90,7 +90,7 @@ C<<< no_spellcheck >>> -- omit Test::PodSpelling tests
 
 =item *
 
-C<<< no_coverage >>> -- omit PodCoverage tests
+C<<< no_coverage >>> -- omit Pod Coverage tests
 
 =back
 
