@@ -3,6 +3,12 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+
+0.09
+
+	- 2013-07-09 21:53:25 Asia/Singapore
+
+
   - Modifications for exclude_filename and exclude_match flags
 
 0.08
