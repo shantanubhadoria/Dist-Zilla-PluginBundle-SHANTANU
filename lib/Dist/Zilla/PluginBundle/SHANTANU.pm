@@ -56,7 +56,37 @@ with 'Dist::Zilla::Role::PluginBundle::Easy';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
 #Gather Stopwords that may skip spelling checks in pod testing
-sub mvp_multivalue_args { qw/stopwords/ }
+sub mvp_multivalue_args { qw/stopwords exclude_filename exclude_match/ }
+
+=attr no_git
+
+makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
+
+=cut
+
+has makemaker => (
+    is      => 'ro',
+    isa     => 'Str',
+    lazy    => 1,
+    default => sub { 
+        exists $_[0]->payload->{makemaker} 
+        ? $_[0]->payload->{makemaker} 
+        : "MakeMaker::Awesome";
+    },
+);
+
+=attr skip_makemaker 
+
+Skip Default Makemaker option to add your own plugin for generating makefile
+
+=cut
+
+has skip_makemaker => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub { $_[0]->payload->{skip_makemaker} },
+);
 
 =attr no_git
 
@@ -113,6 +143,49 @@ has no_spellcheck => (
           : 0;
     },
 );
+
+=attr exclude_filename
+
+list of filenames to exclude e.g.
+    exclude_filename=dist.ini
+    exclude_filename=META.json
+
+=cut
+
+has exclude_filename => (
+    is      => 'ro',
+    isa     => 'ArrayRef',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{exclude_filename} 
+        ? $_[0]->payload->{exclude_filename} 
+        : [qw/dist.ini README.pod META.json/];
+    },
+);
+
+=attr exclude_match
+
+list of regex paths to exclude e.g.
+    exclude_match=^inc\/.*
+
+=cut
+
+has exclude_match => (
+    is      => 'ro',
+    isa     => 'ArrayRef',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{exclude_match} 
+        ? $_[0]->payload->{exclude_match} 
+        : [];
+    },
+);
+
+=attr stopwords
+
+Stopwords to exclude for spell checks in pod
+
+=cut
 
 has stopwords => (
     is      => 'ro',
@@ -232,8 +305,20 @@ sub configure {
         # gather and prune
         (
             $self->no_git
-            ? [ 'GatherDir' => { exclude_filename => [qw/README.pod META.json/] } ] # core
-            : [ 'Git::GatherDir' => { exclude_filename => [qw/README.pod META.json/] } ]
+            ? [
+                'GatherDir' =>
+                  { 
+                      exclude_filename => $self->exclude_filename
+                      , exclude_match    => $self->exclude_match 
+                  },
+              ]    # core
+            : [
+                'Git::GatherDir' =>
+                  { 
+                      exclude_filename => $self->exclude_filename 
+                      , exclude_match    => $self->exclude_match 
+                  },
+            ]
         ),
 
         #Automatically put Resources which need not be specified manually
@@ -287,7 +372,11 @@ sub configure {
         # build system
         'ExecDir',                                            # core
         'ShareDir',                                           # core
-        'MakeMaker::Awesome',                                 # core
+        (
+            $self->skip_makemaker
+            ? ()
+            : $self->makemaker
+        ), # core
 
         # copy files from build back to root for inclusion in VCS
         [
