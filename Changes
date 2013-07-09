@@ -3,6 +3,7 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+  - Modifications for exclude_filename and exclude_match flags
 
 0.08
 

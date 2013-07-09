@@ -24,7 +24,7 @@ this is derived from like the one by David Golden.
 
 =head2 no_git
 
-makemaker attribute By default uses [MakeMaker::Awesome] This can be over riden by defining this attribute
+makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
 
 =head2 skip_makemaker 
 
