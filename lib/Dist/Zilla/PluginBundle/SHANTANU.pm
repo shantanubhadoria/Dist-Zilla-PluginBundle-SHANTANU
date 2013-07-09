@@ -287,7 +287,7 @@ sub configure {
         # build system
         'ExecDir',                                            # core
         'ShareDir',                                           # core
-        'MakeMaker',                                          # core
+        'MakeMaker::Awesome',                                 # core
 
         # copy files from build back to root for inclusion in VCS
         [
