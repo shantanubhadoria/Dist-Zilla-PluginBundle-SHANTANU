@@ -3,6 +3,7 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+Changes to ignore META.yml for git, Added Perl Version
 
 0.10
 

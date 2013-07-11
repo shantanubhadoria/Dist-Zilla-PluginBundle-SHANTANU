@@ -7,6 +7,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 # VERSION
 
 # Dependencies
+use 5.010;
 use autodie 2.00;
 use Moose 0.99;
 use Moose::Autobox;
@@ -151,6 +152,7 @@ has no_spellcheck => (
 list of filenames to exclude e.g.
     exclude_filename=dist.ini
     exclude_filename=META.json
+    exclude_filename=META.yml
 
 =cut
 
@@ -161,7 +163,7 @@ has exclude_filename => (
     default => sub {
         exists $_[0]->payload->{exclude_filename} 
         ? $_[0]->payload->{exclude_filename} 
-        : [qw/dist.ini README.pod META.json/];
+        : [qw/dist.ini README.pod META.json META.yml/];
     },
 );
 
@@ -413,14 +415,14 @@ sub configure {
         # Note -- NextRelease is here to get the ordering right with
         # git actions.  It is *also* a file munger that acts earlier
 
-        # commit dirty Changes, dist.ini, README.pod, META.json
+        # commit dirty Changes, dist.ini, README.pod, META.json, META.yml
         (
             $self->no_git
             ? ()
             : (
                 [
                     'Git::Commit' => 'Commit_Dirty_Files' =>
-                      { allow_dirty => [qw/dist.ini Changes README.pod META.json/] }
+                      { allow_dirty => [qw/dist.ini Changes README.pod META.json META.yml/] }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
             )
