@@ -3,6 +3,7 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+Added Meta YAML generator to help older parsers and KWalitee
 
 0.09
 

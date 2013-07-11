@@ -51,6 +51,8 @@ use Dist::Zilla::Plugin::Test::Version;
 use Dist::Zilla::Plugin::MinimumPerl;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::MetaProvides::Package;
+use Dist::Zilla::Plugin::MetaYAML;
+use Dist::Zilla::Plugin::MetaJSON;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
@@ -367,6 +369,7 @@ sub configure {
         ],
         [ 'MetaProvides::Package' => { meta_noindex => 1 } ], # AFTER MetaNoIndex
 
+        'MetaYAML',                                           # core : Helps avoid kwalitee croaks and supports older systems
         'MetaJSON',                                           # core
 
         # build system
