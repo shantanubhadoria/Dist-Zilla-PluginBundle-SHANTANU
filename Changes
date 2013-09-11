@@ -3,6 +3,12 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+
+0.12
+
+	- 2013-09-11 10:41:16 Asia/Jakarta
+
+
 0.12
 
 	- Fixed Deps 
