@@ -3,6 +3,9 @@ Changes for Dist::Zilla::PluginBundle::Shantanu
     - Time for the first release
 {{$NEXT}}
 
+0.12
+
+	- Fixed Deps 
 
 0.11
 

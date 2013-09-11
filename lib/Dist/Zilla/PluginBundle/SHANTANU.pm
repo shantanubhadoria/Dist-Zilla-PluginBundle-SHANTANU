@@ -55,6 +55,15 @@ use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 
+use Dist::Zilla::Plugin::PerlTidy;
+use Dist::Zilla::Plugin::MakeMaker::Awesome;
+use Dist::Zilla::Plugin::CopyFilesFromBuild;
+use Dist::Zilla::Plugin::CheckMetaResources;
+use Dist::Zilla::Plugin::CheckPrereqsIndexed;
+use Dist::Zilla::Plugin::CheckChangesHasContent;
+use Dist::Zilla::Plugin::CheckExtraTests;
+
+
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
