@@ -383,6 +383,13 @@ sub configure {
 
         'MetaYAML',                                           # core : Helps avoid kwalitee croaks and supports older systems
         'MetaJSON',                                           # core
+        [
+            'ChangelogFromGit::CPAN::Changes' => {
+                tag_regexp             => '^release-(\d+\.\d+)$',
+                parse_version_from_tag => 1,
+                file_name              => 'Changes',
+            }
+        ],
 
         # build system
         'ExecDir',                                            # core
@@ -413,12 +420,6 @@ sub configure {
         ),
         'CheckMetaResources',
         'CheckPrereqsIndexed',
-        [
-            'ChangelogFromGit::CPAN::Changes' => {
-                tag_regexp             => '^release-(\d+\.\d+)$',
-                parse_version_from_tag => 1,
-            }
-        ],
         'CheckExtraTests',
         'TestRelease',                                        # core
         'ConfirmRelease',                                     # core
