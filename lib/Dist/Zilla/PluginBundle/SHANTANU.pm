@@ -173,7 +173,7 @@ has exclude_filename => (
     default => sub {
         exists $_[0]->payload->{exclude_filename} 
         ? $_[0]->payload->{exclude_filename} 
-        : [qw/dist.ini README.pod META.json META.yml/];
+        : [qw/dist.ini Changes README.pod META.json META.yml/];
     },
 );
 
