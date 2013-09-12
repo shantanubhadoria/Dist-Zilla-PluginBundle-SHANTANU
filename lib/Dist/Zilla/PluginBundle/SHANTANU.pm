@@ -403,7 +403,7 @@ sub configure {
         # copy files from build back to root for inclusion in VCS
         [
             CopyFilesFromBuild => {
-                copy => 'META.yml',
+                copy => qw[META.yml Changes],
             }
         ],
 
