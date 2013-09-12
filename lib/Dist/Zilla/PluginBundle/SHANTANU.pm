@@ -60,6 +60,7 @@ use Dist::Zilla::Plugin::MakeMaker::Awesome;
 use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::CheckMetaResources;
 use Dist::Zilla::Plugin::CheckPrereqsIndexed;
+use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
 use Dist::Zilla::Plugin::CheckExtraTests;
 
@@ -412,7 +413,12 @@ sub configure {
         ),
         'CheckMetaResources',
         'CheckPrereqsIndexed',
-        'CheckChangesHasContent',
+        [
+            'ChangelogFromGit::CPAN::Changes' => {
+                tag_regexp             => '^release-(\d+\.\d+)$',
+                parse_version_from_tag => 1,
+            }
+        ],
         'CheckExtraTests',
         'TestRelease',                                        # core
         'ConfirmRelease',                                     # core
