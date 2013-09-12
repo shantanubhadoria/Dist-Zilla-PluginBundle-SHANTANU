@@ -417,6 +417,7 @@ sub configure {
             'ChangelogFromGit::CPAN::Changes' => {
                 tag_regexp             => '^release-(\d+\.\d+)$',
                 parse_version_from_tag => 1,
+                file_name              => 'Changes',
             }
         ],
         'CheckExtraTests',
