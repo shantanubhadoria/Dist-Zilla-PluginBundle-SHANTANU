@@ -43,6 +43,7 @@ use Dist::Zilla::Plugin::Test::ReportPrereqs;
 use Dist::Zilla::Plugin::Test::PodSpelling;
 use Test::Portability::Files 0.06 (); # buggy before that
 use Dist::Zilla::Plugin::Test::Perl::Critic;
+use Dist::Zilla::Plugin::Test::Kwalitee::Extra;
 use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodCoverageTests;
@@ -356,6 +357,11 @@ sub configure {
             ? ()
             : ('Test::Perl::Critic')
         ),
+        [
+            'Test::Kwalitee::Extra' =>{
+                has_corpus => 0,
+            },
+        ],
         'MetaTests',      # core
         'PodSyntaxTests', # core
         (
@@ -375,7 +381,7 @@ sub configure {
         ),
         [
             MetaNoIndex => {
-                directory => [qw/t xt examples corpus/],
+                directory => [qw/t xt examples corpus inc/],
                 'package' => [qw/DB/]
             }
         ],

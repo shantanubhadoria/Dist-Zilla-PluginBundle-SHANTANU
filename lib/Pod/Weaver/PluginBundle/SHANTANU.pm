@@ -26,6 +26,10 @@ Please report any bugs or feature requests through github at
 You will be notified automatically of any progress on your issue.
 END
 
+=method mvp_bundle_config
+
+=cut
+
 sub mvp_bundle_config {
     my @plugins;
     push @plugins, (
