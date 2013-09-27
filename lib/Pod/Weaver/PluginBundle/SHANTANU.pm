@@ -47,6 +47,8 @@ sub mvp_bundle_config {
     );
     for my $plugin (
         [ 'Usage',        _exp('Collect'), { command => 'usage' } ],
+        [ 'Constants',    _exp('Collect'), { command => 'constant' } ],
+        [ 'Registers',    _exp('Collect'), { command => 'register' } ],
         [ 'Functions',    _exp('Collect'), { command => 'func' } ],
         [ 'Attributes',   _exp('Collect'), { command => 'attr' } ],
         [ 'Constructors', _exp('Collect'), { command => 'construct' } ],
