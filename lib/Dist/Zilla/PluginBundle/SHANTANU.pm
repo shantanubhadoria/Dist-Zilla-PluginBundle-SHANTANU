@@ -62,6 +62,8 @@ use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::CheckMetaResources;
 use Dist::Zilla::Plugin::CheckPrereqsIndexed;
 use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes;
+use Dist::Zilla::Plugin::ChangelogFromGit::Debian;
+use Dist::Zilla::Plugin::Control::Debian;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
 use Dist::Zilla::Plugin::CheckExtraTests;
 
@@ -394,6 +396,22 @@ sub configure {
                 tag_regexp             => '^release-(\d+\.\d+)$',
                 parse_version_from_tag => 1,
                 file_name              => 'Changes',
+            }
+        ],
+        [
+            'ChangelogFromGit::Debian' => {
+                tag_regexp             => '^release-(\d+\.\d+)$',
+                parse_version_from_tag => 1,
+                file_name              => 'debian/changelog',
+                maintainer_name        => 'Shantanu Bhadoria',
+                maintainer_email       => 'shantanu@cpan.org',
+            }
+        ],
+        [
+            'Control::Debian' => {
+                file_name              => 'debian/control',
+                maintainer_name        => 'Shantanu Bhadoria',
+                maintainer_email       => 'shantanu@cpan.org',
             }
         ],
 
