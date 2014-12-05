@@ -1,6 +1,9 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.24 2014-12-05T06:13:52
+0.24 2014-12-05T06:34:15
+ - Added new stopwords for pod spellcheck (Shantanu Bhadoria)
+ - Fixes to Dist Zilla PluginBundle for exclude_match empty Array
+   exceptions (Shantanu Bhadoria)
  - Mode change and minor mods (Shantanu Bhadoria)
 
 0.23 2013-10-16T04:50:45Z

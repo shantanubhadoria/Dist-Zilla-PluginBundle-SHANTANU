@@ -38,6 +38,18 @@ no_git attribute
 
 version_regexp attribute
 
+=head2 is_task
+
+Use Taskweaver in lieu of PodWeaver
+
+=head2 weaver_config
+
+PodWeaver config_plugin attribute
+
+=head2 no_spellcheck
+
+Skip spelling checks
+
 =head2 exclude_filename
 
 list of filenames to exclude e.g.
@@ -45,14 +57,37 @@ list of filenames to exclude e.g.
     exclude_filename=META.json
     exclude_filename=META.yml
 
-=head2 exclude_match
-
-list of regex paths to exclude e.g.
-    exclude_match=^inc\/.*
-
 =head2 stopwords
 
 Stopwords to exclude for spell checks in pod
+
+=head2 no_critic
+
+Skip Perl Critic Checks
+
+=head2 no_coverage
+
+Skip Pod Coverage tests
+
+=head2 auto_prereq
+
+Automatically get prerequisites(default 1)
+
+=head2 fake_release
+
+=head2 tag_regexp
+
+Regex for obtaining the version number from git tag
+
+=head2 compile_for_debian
+
+generate debian specific files like control etc. Useful if you are using dh-make-perl for building .deb files from your package
+
+=head2 tag_format
+
+Git Tag format
+
+=head2 git_remote
 
 =for stopwords autoprereq dagolden fakerelease pluginbundle podweaver
 taskweaver uploadtocpan dist ini
