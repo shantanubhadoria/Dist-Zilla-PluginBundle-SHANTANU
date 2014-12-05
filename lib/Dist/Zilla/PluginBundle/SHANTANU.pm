@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Dist::Zilla::PluginBundle::SHANTANU;
+
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
 # VERSION
@@ -13,9 +14,9 @@ use Moose 0.99;
 use Moose::Autobox;
 use namespace::autoclean 0.09;
 
-use Dist::Zilla 4.3; 
+use Dist::Zilla 4.3;
 
-use Dist::Zilla::PluginBundle::Git 2.009;
+use Dist::Zilla::PluginBundle::Git 2.028;
 
 use Dist::Zilla::Plugin::Git::NextVersion;
 use Dist::Zilla::Plugin::AutoMetaResources;
@@ -39,9 +40,8 @@ use Dist::Zilla::Plugin::Test::Compile;
 use Dist::Zilla::Plugin::Test::MinimumVersion;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
 
-
 use Dist::Zilla::Plugin::Test::PodSpelling;
-use Test::Portability::Files 0.06 (); # buggy before that
+use Test::Portability::Files 0.06 ();    # buggy before that
 use Dist::Zilla::Plugin::Test::Perl::Critic;
 use Dist::Zilla::Plugin::Test::Kwalitee::Extra;
 use Dist::Zilla::Plugin::MetaTests;
@@ -72,7 +72,7 @@ with 'Dist::Zilla::Role::PluginBundle::Easy';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
 #Gather Stopwords that may skip spelling checks in pod testing
-sub mvp_multivalue_args { qw/stopwords exclude_filename exclude_match/ }
+sub mvp_multivalue_args { qw/stopwords exclude_filename/ }
 
 =attr no_git
 
@@ -84,10 +84,10 @@ has makemaker => (
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
-    default => sub { 
-        exists $_[0]->payload->{makemaker} 
-        ? $_[0]->payload->{makemaker} 
-        : "MakeMaker::Awesome";
+    default => sub {
+        exists $_[0]->payload->{makemaker}
+          ? $_[0]->payload->{makemaker}
+          : "MakeMaker::Awesome";
     },
 );
 
@@ -135,6 +135,12 @@ has version_regexp => (
     },
 );
 
+=attr is_task
+
+Use Taskweaver in lieu of PodWeaver
+
+=cut
+
 has is_task => (
     is      => 'ro',
     isa     => 'Bool',
@@ -142,12 +148,24 @@ has is_task => (
     default => sub { $_[0]->payload->{is_task} },
 );
 
+=attr weaver_config
+
+PodWeaver config_plugin attribute
+
+=cut
+
 has weaver_config => (
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
     default => sub { $_[0]->payload->{weaver_config} || '@SHANTANU' },
 );
+
+=attr no_spellcheck
+
+Skip spelling checks
+
+=cut
 
 has no_spellcheck => (
     is      => 'ro',
@@ -174,27 +192,9 @@ has exclude_filename => (
     isa     => 'ArrayRef',
     lazy    => 1,
     default => sub {
-        exists $_[0]->payload->{exclude_filename} 
-        ? $_[0]->payload->{exclude_filename} 
-        : [qw/dist.ini Changes README.pod META.json META.yml/];
-    },
-);
-
-=attr exclude_match
-
-list of regex paths to exclude e.g.
-    exclude_match=^inc\/.*
-
-=cut
-
-has exclude_match => (
-    is      => 'ro',
-    isa     => 'ArrayRef',
-    lazy    => 1,
-    default => sub {
-        exists $_[0]->payload->{exclude_match} 
-        ? $_[0]->payload->{exclude_match} 
-        : [];
+        exists $_[0]->payload->{exclude_filename}
+          ? $_[0]->payload->{exclude_filename}
+          : [qw/dist.ini Changes README.pod META.json META.yml/];
     },
 );
 
@@ -213,6 +213,12 @@ has stopwords => (
     },
 );
 
+=attr no_critic
+
+Skip Perl Critic Checks
+
+=cut
+
 has no_critic => (
     is      => 'ro',
     isa     => 'Bool',
@@ -221,6 +227,12 @@ has no_critic => (
         exists $_[0]->payload->{no_critic} ? $_[0]->payload->{no_critic} : 0;
     },
 );
+
+=attr no_coverage
+
+Skip Pod Coverage tests
+
+=cut
 
 has no_coverage => (
     is      => 'ro',
@@ -233,14 +245,26 @@ has no_coverage => (
     },
 );
 
+=attr auto_prereq
+
+Automatically get prerequisites(default 1)
+
+=cut
+
 has auto_prereq => (
     is      => 'ro',
     isa     => 'Bool',
     lazy    => 1,
     default => sub {
-        exists $_[0]->payload->{auto_prereq} ? $_[0]->payload->{auto_prereq} : 1;
+        exists $_[0]->payload->{auto_prereq}
+          ? $_[0]->payload->{auto_prereq}
+          : 1;
     },
 );
+
+=attr fake_release
+
+=cut
 
 has fake_release => (
     is      => 'ro',
@@ -249,21 +273,65 @@ has fake_release => (
     default => sub { $_[0]->payload->{fake_release} },
 );
 
+=attr tag_regexp
+
+Regex for obtaining the version number from git tag
+
+=cut 
+
+has tag_regexp => (
+    is      => 'ro',
+    isa     => 'Str',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{tag_regexp}
+          ? $_[0]->payload->{tag_regexp}
+          : '^release-(\d+\.\d+)$',;
+    },
+);
+
+=attr compile_for_debian
+
+generate debian specific files like control etc. Useful if you are using dh-make-perl for building .deb files from your package
+
+=cut
+
+has compile_for_debian => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => 0,
+);
+
+=attr tag_format
+
+Git Tag format
+
+=cut
+
 has tag_format => (
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
     default => sub {
-        exists $_[0]->payload->{tag_format} ? $_[0]->payload->{tag_format} : 'release-%v',;
+        exists $_[0]->payload->{tag_format}
+          ? $_[0]->payload->{tag_format}
+          : 'release-%v',;
     },
 );
+
+=attr git_remote
+
+=cut
 
 has git_remote => (
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
     default => sub {
-        exists $_[0]->payload->{git_remote} ? $_[0]->payload->{git_remote} : 'origin',;
+        exists $_[0]->payload->{git_remote}
+          ? $_[0]->payload->{git_remote}
+          : 'origin',;
     },
 );
 
@@ -274,11 +342,15 @@ sub configure {
     push @push_to, $self->git_remote if $self->git_remote ne 'origin';
 
     $self->add_plugins(
-        # version number use Autoversion Plugin if no_git is set else use Git::NextVersion based on version_regexp or default version regex
+
+# version number use Autoversion Plugin if no_git is set else use Git::NextVersion based on version_regexp or default version regex
         (
             $self->no_git
             ? 'AutoVersion'
-            : [ 'Git::NextVersion' => { version_regexp => $self->version_regexp } ]
+            : [
+                'Git::NextVersion' =>
+                  { version_regexp => $self->version_regexp }
+            ]
         ),
         'PerlTidy',
 
@@ -289,8 +361,8 @@ sub configure {
             : 'ContributorsFromGit'
         ),
 
-        'PruneCruft',                                                               # core
-        'ManifestSkip',                                                             # core
+        'PruneCruft',      # core
+        'ManifestSkip',    # core
 
         # file munging
         'OurPkgVersion',
@@ -303,19 +375,20 @@ sub configure {
         ),
 
         # generated distribution files
-        'ReadmeAnyFromPod', # in build dir
+        'ReadmeAnyFromPod',    # in build dir
         [
-            ReadmeAnyFromPod => ReadmeInRoot => { # also generate in root for github, etc.
+            ReadmeAnyFromPod => ReadmeInRoot =>
+              {                # also generate in root for github, etc.
                 type     => 'pod',
                 filename => 'README.pod',
                 location => 'root',
-            }
+              }
         ],
 
-        'License',                              # core
+        'License',             # core
 
         # generated t/ tests
-        [ 'Test::Compile' => { fake_home => 1 } ],
+        [ 'Test::Compile'        => { fake_home       => 1 } ],
         [ 'Test::MinimumVersion' => { max_target_perl => '5.010' } ],
         'Test::ReportPrereqs',
 
@@ -323,18 +396,14 @@ sub configure {
         (
             $self->no_git
             ? [
-                'GatherDir' =>
-                  { 
-                      exclude_filename => $self->exclude_filename
-                      , exclude_match    => $self->exclude_match 
-                  },
+                'GatherDir' => {
+                    exclude_filename => $self->exclude_filename,
+                },
               ]    # core
             : [
-                'Git::GatherDir' =>
-                  { 
-                      exclude_filename => $self->exclude_filename 
-                      , exclude_match    => $self->exclude_match 
-                  },
+                'Git::GatherDir' => {
+                    exclude_filename => $self->exclude_filename,
+                },
             ]
         ),
 
@@ -350,26 +419,24 @@ sub configure {
 
         # generated xt/ tests
         (
-            $self->no_spellcheck
-            ? ()
+            $self->no_spellcheck ? ()
             : [ 'Test::PodSpelling' => { stopwords => $self->stopwords } ]
         ),
         (
-            $self->no_critic
-            ? ()
+            $self->no_critic ? ()
             : ('Test::Perl::Critic')
         ),
         [
-            'Test::Kwalitee::Extra' =>{
+            'Test::Kwalitee::Extra' => {
                 has_corpus => 0,
             },
         ],
-        'MetaTests',      # core
-        'PodSyntaxTests', # core
+        'MetaTests',         # core
+        'PodSyntaxTests',    # core
         (
             $self->no_coverage
             ? ()
-            : ('PodCoverageTests') # core
+            : ('PodCoverageTests')    # core
         ),
         [ 'Test::Portability' => { options => "test_one_dot = 0" } ],
         'Test::Version',
@@ -381,19 +448,22 @@ sub configure {
             ? [ 'AutoPrereqs' => { skip => "^t::lib" } ]
             : ()
         ),
+
         [
             MetaNoIndex => {
                 directory => [qw/t xt examples corpus inc/],
                 'package' => [qw/DB/]
             }
         ],
-        [ 'MetaProvides::Package' => { meta_noindex => 1 } ], # AFTER MetaNoIndex
+        [ 'MetaProvides::Package' => { meta_noindex => 1 } ]
+        ,    # AFTER MetaNoIndex
 
-        'MetaYAML',                                           # core : Helps avoid kwalitee croaks and supports older systems
-        'MetaJSON',                                           # core
+        'MetaYAML'
+        ,    # core : Helps avoid kwalitee croaks and supports older systems
+        'MetaJSON',    # core
         [
             'ChangelogFromGit::CPAN::Changes' => {
-                tag_regexp             => '^release-(\d+\.\d+)$',
+                tag_regexp             => $self->tag_regexp,
                 parse_version_from_tag => 1,
                 transform_version_tag  => 1,
                 file_name              => 'Changes',
@@ -401,29 +471,34 @@ sub configure {
         ],
         [
             'ChangelogFromGit::Debian' => {
-                tag_regexp             => '^release-(\d+\.\d+)$',
+                tag_regexp             => $self->tag_regexp,
                 parse_version_from_tag => 1,
                 file_name              => 'debian/changelog',
                 maintainer_name        => 'Shantanu Bhadoria',
                 maintainer_email       => 'shantanu@cpan.org',
             }
         ],
-        [
-            'Control::Debian' => {
-                file_name              => 'debian/control',
-                maintainer_name        => 'Shantanu Bhadoria',
-                maintainer_email       => 'shantanu@cpan.org',
-            }
-        ],
+        (
+            $self->compile_for_debian
+            ?
+            [
+                'Control::Debian' => {
+                    file_name        => 'debian/control',
+                    maintainer_name  => 'Shantanu Bhadoria',
+                    maintainer_email => 'shantanu@cpan.org',
+                }
+            ]
+            : ()
+        ),
 
         # build system
-        'ExecDir',                                            # core
-        'ShareDir',                                           # core
+        'ExecDir',     # core
+        'ShareDir',    # core
         (
             $self->skip_makemaker
             ? ()
             : $self->makemaker
-        ), # core
+        ),             # core
 
         # copy files from build back to root for inclusion in VCS
         [
@@ -433,24 +508,26 @@ sub configure {
         ],
 
         # manifest -- must come after all generated files
-        'Manifest',                                           # core
+        'Manifest',    # core
 
         # before release
         (
             $self->no_git
             ? ()
-            : [ 'Git::Check' => { 
-                    allow_dirty => [qw/dist.ini Changes README.pod META.yml/] 
-            } ]
+            : [
+                'Git::Check' => {
+                    allow_dirty => [qw/dist.ini Changes README.pod META.yml/]
+                }
+            ]
         ),
         'CheckMetaResources',
         'CheckPrereqsIndexed',
         'CheckExtraTests',
-        'TestRelease',                                        # core
-        'ConfirmRelease',                                     # core
+        'TestRelease',       # core
+        'ConfirmRelease',    # core
 
         # release
-        ( $self->fake_release ? 'FakeRelease' : 'UploadToCPAN' ), # core
+        ( $self->fake_release ? 'FakeRelease' : 'UploadToCPAN' ),    # core
 
         # after release
         # Note -- NextRelease is here to get the ordering right with
@@ -462,8 +539,10 @@ sub configure {
             ? ()
             : (
                 [
-                    'Git::Commit' => 'Commit_Dirty_Files' =>
-                      { allow_dirty => [qw/dist.ini Changes README.pod META.json META.yml/] }
+                    'Git::Commit' => 'Commit_Dirty_Files' => {
+                        allow_dirty =>
+                          [qw/dist.ini Changes README.pod META.json META.yml/]
+                    }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
             )
@@ -474,13 +553,16 @@ sub configure {
             'NextRelease' => {
                 format => '%n%v%n%n%t- %{yyyy-MM-dd HH:mm:ss VVVV}d%n',
             },
-        ], # core (also munges files)
+        ],    # core (also munges files)
 
         (
             $self->no_git
             ? ()
             : (
-                [ 'Git::Commit' => 'Commit_Changes' => { commit_msg => "Bump Changes" } ],
+                [
+                    'Git::Commit' => 'Commit_Changes' =>
+                      { commit_msg => "Bump Changes" }
+                ],
 
                 [ 'Git::Push' => { push_to => \@push_to } ],
             )
