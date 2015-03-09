@@ -19,7 +19,7 @@ use Dist::Zilla 4.3;
 use Dist::Zilla::PluginBundle::Git 2.028;
 
 use Dist::Zilla::Plugin::Git::NextVersion;
-use Dist::Zilla::Plugin::AutoMetaResources;
+use Dist::Zilla::Plugin::AutoMetaResourcesPrefixed;
 
 use Dist::Zilla::Plugin::ContributorsFromGit;
 
@@ -61,7 +61,7 @@ use Dist::Zilla::Plugin::MakeMaker::Awesome;
 use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::CheckMetaResources;
 use Dist::Zilla::Plugin::CheckPrereqsIndexed;
-use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes;
+use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes 0.0.15;
 use Dist::Zilla::Plugin::ChangelogFromGit::Debian;
 use Dist::Zilla::Plugin::Control::Debian;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
@@ -409,7 +409,7 @@ sub configure {
 
         #Automatically put Resources which need not be specified manually
         [
-            AutoMetaResources => {
+            AutoMetaResourcesPrefixed => {
                 'repository.github' => 'user:shantanubhadoria',
                 'bugtracker.github' => 'user:shantanubhadoria',
                 'bugtracker.rt'     => 0,
@@ -640,8 +640,8 @@ plugins used like this:
 
   [@SHANTANU]
   :version = 0.32
-  AutoMetaResources.bugtracker.github = user:shantanu
-  AutoMetaResources.bugtracker.rt = 0
+  AutoMetaResourcesPrefixed.bugtracker.github = user:shantanu
+  AutoMetaResourcesPrefixed.bugtracker.rt = 0
 
 = SEE ALSO
 
