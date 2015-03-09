@@ -1,6 +1,12 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.24 2014-12-05T06:34:15
+0.25 2015-03-09T10:03:27
+ - Adding prefixed autometaresources The github repository can now have a
+   prefix of perl-* added to the module name. This allows for seperation of
+   perl repos from others. (Shantanu Bhadoria)
+ - Bump Changes (Shantanu Bhadoria)
+
+0.24 2014-12-05T06:34:15Z
  - Added new stopwords for pod spellcheck (Shantanu Bhadoria)
  - Fixes to Dist Zilla PluginBundle for exclude_match empty Array
    exceptions (Shantanu Bhadoria)

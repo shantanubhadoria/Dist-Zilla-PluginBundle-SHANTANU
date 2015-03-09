@@ -6,7 +6,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
@@ -169,8 +169,8 @@ plugins used like this:
 
    [@SHANTANU]
    :version = 0.32
-   AutoMetaResources.bugtracker.github = user:shantanu
-   AutoMetaResources.bugtracker.rt = 0
+   AutoMetaResourcesPrefixed.bugtracker.github = user:shantanu
+   AutoMetaResourcesPrefixed.bugtracker.rt = 0
 
 =head1 SEE ALSO
 
@@ -197,7 +197,7 @@ L<Dist::Zilla::Plugin::TaskWeaver>
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through github at 
-L<https://github.com/shantanubhadoria/dist-zilla-pluginbundle-shantanu/issues>.
+L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
@@ -205,9 +205,9 @@ You will be notified automatically of any progress on your issue.
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/shantanubhadoria/dist-zilla-pluginbundle-shantanu>
+L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu>
 
-  git clone git://github.com/shantanubhadoria/dist-zilla-pluginbundle-shantanu.git
+  git clone git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
 
 =head1 AUTHOR
 
@@ -235,7 +235,7 @@ Shantanu Bhadoria <shantanu@shantanu-M14xR2.(none)>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Shantanu Bhadoria.
+This software is copyright (c) 2015 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
