@@ -1,6 +1,9 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.25 2015-03-09T10:03:27
+0.26 2015-03-23T06:32:20
+ - No changes found
+
+0.25 2015-03-09T10:03:27Z
  - Adding prefixed autometaresources The github repository can now have a
    prefix of perl-* added to the module name. This allows for seperation of
    perl repos from others. (Shantanu Bhadoria)

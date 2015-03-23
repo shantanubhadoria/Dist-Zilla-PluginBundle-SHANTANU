@@ -6,7 +6,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -211,7 +211,7 @@ L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu>
 
 =head1 AUTHOR
 
-Shantanu Bhadoria <shantanu@cpan.org>
+Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
 
 =head1 CONTRIBUTORS
 
@@ -226,6 +226,10 @@ Shantanu <shantanu@cpan.org>
 =item *
 
 Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
+
+=item *
+
+Shantanu Bhadoria <shantanu@cpan.org>
 
 =item *
 
