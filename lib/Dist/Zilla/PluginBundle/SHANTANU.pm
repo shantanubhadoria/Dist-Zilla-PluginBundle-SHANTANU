@@ -194,7 +194,7 @@ has exclude_filename => (
     default => sub {
         exists $_[0]->payload->{exclude_filename}
           ? $_[0]->payload->{exclude_filename}
-          : [qw/dist.ini Changes README.pod META.json META.yml/];
+          : [qw/dist.ini Changes README.pod README.md META.json META.yml/];
     },
 );
 
@@ -516,7 +516,7 @@ sub configure {
             ? ()
             : [
                 'Git::Check' => {
-                    allow_dirty => [qw/dist.ini Changes README.pod META.yml/]
+                    allow_dirty => [qw/dist.ini Changes README.md README.pod META.yml/]
                 }
             ]
         ),
@@ -541,7 +541,7 @@ sub configure {
                 [
                     'Git::Commit' => 'Commit_Dirty_Files' => {
                         allow_dirty =>
-                          [qw/dist.ini Changes README.pod META.json META.yml/]
+                          [qw/dist.ini Changes README.md README.pod META.json META.yml/]
                     }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
