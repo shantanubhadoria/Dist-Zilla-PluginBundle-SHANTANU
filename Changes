@@ -1,6 +1,9 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.26 2015-03-23T06:37:18
+0.27 2015-03-30T04:54:05
+ - adding markdown file to dirty list (Shantanu Bhadoria)
+
+0.26 2015-03-23T06:37:18Z
  - dist.ini changes, added author website (Shantanu Bhadoria)
 
 0.25 2015-03-09T10:03:27Z
