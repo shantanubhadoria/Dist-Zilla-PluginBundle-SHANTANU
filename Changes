@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.28 2015-04-08T04:44:15
+0.28 2015-04-08T04:45:32
+ - Added .travis.yml to dirty list (Shantanu Bhadoria)
  - adding travis to git ignore (Shantanu Bhadoria)
  - Fixed dirty debian files in build Adding the Readmes in git again
    (Shantanu Bhadoria)

@@ -448,7 +448,7 @@ sub configure {
             : [
                 'Git::Check' => {
                     allow_dirty => [
-                        qw/dist.ini Changes README.md README.pod META.yml META.json/
+                        qw/dist.ini Changes README.md README.pod META.yml META.json .travis.yml/
                     ]
                 }
             ]
@@ -486,7 +486,7 @@ sub configure {
                 [
                     'Git::Commit' => 'Commit_Dirty_Files' => {
                         allow_dirty => [
-                            qw/dist.ini Changes README.md README.pod META.json META.yml/
+                            qw/dist.ini Changes README.md README.pod META.json META.yml .travis.yml/
                         ]
                     }
                 ],
