@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 0.34
+    version 0.35
 
 SYNOPSIS
 
@@ -178,15 +178,9 @@ AUTHOR
 
     Shantanu Bhadoria <shantanu@cpan.org> https://www.shantanubhadoria.com
 
-CONTRIBUTORS
+CONTRIBUTOR
 
-      * Shantanu <shantanu@cpan.org>
-
-      * Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
-
-      * Shantanu Bhadoria <shantanu@cpan.org>
-
-      * Shantanu Bhadoria <shantanu@shantanu-M14xR2.(none)>
+    Shantanu Bhadoria <shantanu att cpan dott org>
 
 COPYRIGHT AND LICENSE
 

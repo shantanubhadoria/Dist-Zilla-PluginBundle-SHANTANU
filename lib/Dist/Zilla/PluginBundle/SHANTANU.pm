@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -536,7 +536,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 
@@ -747,29 +747,11 @@ L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu>
 
 Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
 
-=head1 CONTRIBUTORS
+=head1 CONTRIBUTOR
 
 =for stopwords Shantanu Bhadoria
 
-=over 4
-
-=item *
-
-Shantanu <shantanu@cpan.org>
-
-=item *
-
-Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
-
-=item *
-
-Shantanu Bhadoria <shantanu@cpan.org>
-
-=item *
-
-Shantanu Bhadoria <shantanu@shantanu-M14xR2.(none)>
-
-=back
+Shantanu Bhadoria <shantanu att cpan dott org>
 
 =head1 COPYRIGHT AND LICENSE
 

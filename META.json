@@ -122,15 +122,15 @@
    "provides" : {
       "Dist::Zilla::Plugin::AutoMetaResourcesPrefixed" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm",
-         "version" : "0.34"
+         "version" : "0.35"
       },
       "Dist::Zilla::PluginBundle::SHANTANU" : {
          "file" : "lib/Dist/Zilla/PluginBundle/SHANTANU.pm",
-         "version" : "0.34"
+         "version" : "0.35"
       },
       "Pod::Weaver::PluginBundle::SHANTANU" : {
          "file" : "lib/Pod/Weaver/PluginBundle/SHANTANU.pm",
-         "version" : "0.34"
+         "version" : "0.35"
       }
    },
    "release_status" : "stable",
@@ -145,12 +145,9 @@
          "web" : "https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu"
       }
    },
-   "version" : "0.34",
+   "version" : "0.35",
    "x_contributors" : [
-      "Shantanu <shantanu@cpan.org>",
-      "Shantanu Bhadoria <shantanu.bhadoria@gmail.com>",
-      "Shantanu Bhadoria <shantanu@cpan.org>",
-      "Shantanu Bhadoria <shantanu@shantanu-M14xR2.(none)>"
+      "Shantanu Bhadoria <shantanu att cpan dott org>"
    ]
 }
 

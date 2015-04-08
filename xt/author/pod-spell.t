@@ -22,6 +22,10 @@ Shantanu
 Bhadoria
 shantanu
 https
+att
+cpan
+dott
+org
 lib
 Dist
 Zilla
