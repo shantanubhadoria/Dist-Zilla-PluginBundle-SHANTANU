@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.29'; # TRIAL VERSION
+our $VERSION = '0.29'; # VERSION
 
 # Dependencies
 use 5.010;
