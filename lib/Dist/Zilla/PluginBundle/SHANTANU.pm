@@ -263,7 +263,7 @@ has git_remote => (
 sub configure {
     my $self = shift;
 
-    my @push_to = ('origin');
+    my @push_to = ( 'origin', 'master', 'build/master' );
     push @push_to, $self->git_remote if $self->git_remote ne 'origin';
 
     $self->add_plugins(

@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.29 2015-04-08T07:15:13
+0.29 2015-04-08T07:18:19
+ - Added more branched to push list (Shantanu Bhadoria)
  - added .travis to master (Shantanu Bhadoria)
 
 0.28 2015-04-08T04:52:44Z
