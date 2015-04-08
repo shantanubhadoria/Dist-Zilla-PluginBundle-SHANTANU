@@ -372,7 +372,6 @@ sub configure {
             ? ()
             : ('PodCoverageTests')    # core
         ),
-        [ 'Test::Portability' => { options => "test_one_dot = 0" } ],
         'Test::Version',
 
         # metadata
@@ -395,7 +394,6 @@ sub configure {
         'MetaYAML'
         ,    # core : Helps avoid kwalitee croaks and supports older systems
         'MetaJSON',    # core
-        'TravisYML',
         [
             'ChangelogFromGit::CPAN::Changes' => {
                 tag_regexp             => $self->tag_regexp,
