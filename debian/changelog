@@ -1,0 +1,42 @@
+dist-zilla-pluginbundle-shantanu (release-0.27) stable; urgency=low
+  * v0.27
+  - adding markdown file to dirty list (Shantanu Bhadoria) 
+  * adding markdown file to dirty list 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Mon, 30 Mar 2015 12:57:08 +0000
+
+dist-zilla-pluginbundle-shantanu (release-0.26) stable; urgency=low
+  * v0.26
+  - dist.ini changes, added author website (Shantanu Bhadoria) 
+  * dist.ini changes, added author website 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Mon, 23 Mar 2015 14:40:12 +0000
+
+dist-zilla-pluginbundle-shantanu (release-0.25) stable; urgency=low
+  * v0.25
+  - Adding prefixed autometaresources The github repository can now have
+    a
+  prefix of perl-* added to the module name. This allows for seperation
+    of
+  perl repos from others. (Shantanu Bhadoria)
+  - Bump Changes (Shantanu Bhadoria) 
+  * Adding prefixed autometaresources The github repository can now have
+    a prefix of perl-* added to the module name. This allows for
+    seperation of perl repos from others. 
+  * Bump Changes 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Mon,  9 Mar 2015 18:05:52 +0000
+
+dist-zilla-pluginbundle-shantanu (release-0.24) stable; urgency=low
+  * v0.24
+  - Added new stopwords for pod spellcheck (Shantanu Bhadoria)
+  - Fixes to Dist Zilla PluginBundle for exclude_match empty Array
+  exceptions (Shantanu Bhadoria)
+  - Mode change and minor mods (Shantanu Bhadoria) 
+  * Added new stopwords for pod spellcheck 
+  * Fixes to Dist Zilla PluginBundle for exclude_match empty Array
+    exceptions 
+  * Mode change and minor mods 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Fri,  5 Dec 2014 14:37:57 +0000
+
