@@ -353,7 +353,7 @@ has git_remote => (
 sub configure {
     my $self = shift;
 
-    my @push_to = ('origin','master','build/master');
+    my @push_to = ('origin','origin build/master');
     push @push_to, $self->git_remote if $self->git_remote ne 'origin';
 
     $self->add_plugins(
@@ -580,7 +580,7 @@ sub configure {
                 [
                     'Git::Commit' => 'Commit_Dirty_Files' => {
                         allow_dirty =>
-                          [qw/dist.ini Changes README.md README.pod META.json META.yml .travis.yml/]
+                          [qw/dist.ini README.md .travis.yml/]
                     }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
