@@ -3,7 +3,7 @@ use warnings;
 
 package Pod::Weaver::PluginBundle::SHANTANU;
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 use Pod::Weaver 3.101638;
 use Pod::Weaver::Config::Assembler;
@@ -95,7 +95,7 @@ Pod::Weaver::PluginBundle::SHANTANU
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 METHODS
 

@@ -32,13 +32,13 @@ no_index:
 provides:
   Dist::Zilla::Plugin::AutoMetaResourcesPrefixed:
     file: lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm
-    version: 0.35
+    version: 0.36
   Dist::Zilla::PluginBundle::SHANTANU:
     file: lib/Dist/Zilla/PluginBundle/SHANTANU.pm
-    version: 0.35
+    version: 0.36
   Pod::Weaver::PluginBundle::SHANTANU:
     file: lib/Pod/Weaver/PluginBundle/SHANTANU.pm
-    version: 0.35
+    version: 0.36
 requires:
   Dist::Zilla: 4.3
   Dist::Zilla::Plugin::AutoMetaResources: 0
@@ -101,6 +101,6 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues
   homepage: https://metacpan.org/release/Dist-Zilla-PluginBundle-SHANTANU
   repository: git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
-version: 0.35
+version: 0.36
 x_contributors:
   - 'Shantanu Bhadoria <shantanu att cpan dott org>'
