@@ -1,6 +1,10 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.28 2015-04-08T04:49:47
+0.29 2015-04-08T07:00:36
+ - added .travis to master (Shantanu Bhadoria)
+
+0.28 2015-04-08T04:52:44
+ - v0.28 (Shantanu Bhadoria)
  - Added .travis.yml to dirty list (Shantanu Bhadoria)
  - adding travis to git ignore (Shantanu Bhadoria)
  - Fixed dirty debian files in build Adding the Readmes in git again
@@ -8,116 +12,116 @@ Changelog for Dist-Zilla-PluginBundle-SHANTANU
  - Trying removal of possibly unnecessary files (Shantanu Bhadoria)
  - local changes (Shantanu Bhadoria)
 
-0.27 2015-03-30T04:57:08Z
+0.27 2015-03-30T04:57:08
  - v0.27 (Shantanu Bhadoria)
  - adding markdown file to dirty list (Shantanu Bhadoria)
 
-0.26 2015-03-23T06:40:12Z
+0.26 2015-03-23T06:40:12
  - v0.26 (Shantanu Bhadoria)
  - dist.ini changes, added author website (Shantanu Bhadoria)
 
-0.25 2015-03-09T10:05:52Z
+0.25 2015-03-09T10:05:52
  - v0.25 (Shantanu Bhadoria)
  - Adding prefixed autometaresources The github repository can now have a
    prefix of perl-* added to the module name. This allows for seperation of
    perl repos from others. (Shantanu Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.24 2014-12-05T06:37:57Z
+0.24 2014-12-05T06:37:57
  - v0.24 (Shantanu Bhadoria)
  - Added new stopwords for pod spellcheck (Shantanu Bhadoria)
  - Fixes to Dist Zilla PluginBundle for exclude_match empty Array
    exceptions (Shantanu Bhadoria)
  - Mode change and minor mods (Shantanu Bhadoria)
 
-0.23 2013-10-16T04:50:45Z
+0.23 2013-10-16T04:50:45
  - v0.23 (Shantanu Bhadoria)
  - Updated to latest Changelogfromgit cpan changes code (Shantanu Bhadoria)
 
-0.22 2013-10-05T03:57:15Z
+0.22 2013-10-05T03:57:15
  - v0.22 (Shantanu)
  - Added debian files (Shantanu)
 
-0.21 2013-09-29T02:45:52Z
+0.21 2013-09-29T02:45:52
  - v0.21 (Shantanu)
  - Moved Constants and Registers lower (Shantanu)
 
-0.20 2013-09-27T10:08:08Z
+0.20 2013-09-27T10:08:08
  - v0.20 (Shantanu)
  - add additional group to Pod weaver (Shantanu)
 
-0.19 2013-09-14T03:38:26Z
+0.19 2013-09-14T03:38:26
  - v0.19 (Shantanu)
  - Added inc and corpus directories to no index list (Shantanu)
 
-0.18 2013-09-12T08:49:01Z
+0.18 2013-09-12T08:49:01
  - v0.18 (Shantanu)
  - v0.16 (Shantanu)
 
-0.17 2013-09-12T08:45:39Z
+0.17 2013-09-12T08:45:39
  - v0.17 (Shantanu)
  - Added README.pod (Shantanu)
 
-0.16 2013-09-12T06:46:08Z
+0.16 2013-09-12T06:46:08
  - v0.16 (Shantanu)
  - Commit Changes test (Shantanu)
  - trying a different Position for Changelog. moveing Changes back to core
    (Shantanu)
 
-0.15 2013-09-12T06:20:47Z
+0.15 2013-09-12T06:20:47
  - Renamed CHANGES to Changes (Shantanu)
 
-0.14 2013-09-12T06:14:58Z
+0.14 2013-09-12T06:14:58
  - Renamed CHANGES to Changes (Shantanu)
 
-0.13 2013-09-12T06:07:57Z
+0.13 2013-09-12T06:07:57
  - Moved to Changelog From git (Shantanu)
  - Bump Changes (Shantanu)
 
-0.12 2013-09-11T03:21:17Z
+0.12 2013-09-11T03:21:17
  - fixed Deps (Shantanu)
  - Bump Changes (Shantanu Bhadoria)
 
-0.11 2013-07-11T03:37:54Z
+0.11 2013-07-11T03:37:54
  - v0.11 (Shantanu Bhadoria)
  - Added Perl Version, few fixes to ignore META.yml for git (Shantanu
    Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.10 2013-07-11T01:10:14Z
+0.10 2013-07-11T01:10:14
  - v0.10 (Shantanu Bhadoria)
  - Added Meta YAML generator to help older parsers and KWalitee (Shantanu
    Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.09 2013-07-09T13:54:24Z
+0.09 2013-07-09T13:54:24
  - v0.09 (Shantanu Bhadoria)
  - Modification for exclude_filename bug (Shantanu Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.08 2013-07-09T10:13:16Z
+0.08 2013-07-09T10:13:16
  - v0.08 (Shantanu Bhadoria)
 
-0.07 2013-07-09T10:00:24Z
+0.07 2013-07-09T10:00:24
  - Swapped Dist::Zilla::Plugin::MakeMaker with
    Dist::Zilla::Plugin::MakeMaker::Awesome (Shantanu Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.04 2013-03-05T12:37:47Z
+0.04 2013-03-05T12:37:47
  - v0.04 (Shantanu Bhadoria)
  - Fixed .gitignore to ignore PERLTIDY log (Shantanu Bhadoria)
  - Fixed a spelling mistake (Shantanu Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.03 2013-03-05T12:09:35Z
+0.03 2013-03-05T12:09:35
  - v0.03 (Shantanu Bhadoria)
  - Bump Changes (Shantanu Bhadoria)
 
-0.02 2013-03-05T12:08:16Z
+0.02 2013-03-05T12:08:16
  - v0.02 (Shantanu Bhadoria)
  - Fixed VERSION Comment (Shantanu Bhadoria)
 
-0.01 2013-03-05T10:55:51Z
+0.01 2013-03-05T10:55:51
  - Fixed VERSION Comment (Shantanu Bhadoria)
  - Added Changelogfromgit plugin (Shantanu Bhadoria)
  - fixed dist.ini (Shantanu Bhadoria)
