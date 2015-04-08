@@ -1,7 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.36 2015-04-08T09:51:44
- - No changes found
+0.36 2015-04-08T09:52:06
+ - Cleanup and fixes (Shantanu Bhadoria)
 
 0.35 2015-04-08T08:35:55Z
  - adding mailmap (Shantanu Bhadoria)
