@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.28 2015-04-08T04:38:10
+0.28 2015-04-08T04:40:04
+ - adding travis to git ignore (Shantanu Bhadoria)
  - Fixed dirty debian files in build Adding the Readmes in git again
    (Shantanu Bhadoria)
  - Trying removal of possibly unnecessary files (Shantanu Bhadoria)
