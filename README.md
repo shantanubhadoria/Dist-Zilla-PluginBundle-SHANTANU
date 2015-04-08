@@ -20,7 +20,7 @@ this is derived from like the one by David Golden.
 
 # ATTRIBUTES
 
-## no\_git
+## makemaker 
 
 makemaker attribute By default uses \[MakeMaker::Awesome\] This can be overriden by defining this attribute
 
@@ -31,6 +31,10 @@ Skip Default Makemaker option to add your own plugin for generating makefile
 ## no\_git
 
 no\_git attribute
+
+## no\_commitbuild
+
+no\_commitbuild attribute, do not create a build branch
 
 ## version\_regexp 
 
