@@ -49,12 +49,14 @@ use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::Test::Portability;
 use Dist::Zilla::Plugin::Test::Version;
+use Dist::Zilla::Plugin::TravisYML;
 
 use Dist::Zilla::Plugin::MinimumPerl;
 use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
+use Dist::Zilla::Plugin::Git::CommitBuild;
 
 use Dist::Zilla::Plugin::PerlTidy;
 use Dist::Zilla::Plugin::MakeMaker::Awesome;
@@ -115,6 +117,19 @@ has no_git => (
     isa     => 'Bool',
     lazy    => 1,
     default => sub { $_[0]->payload->{no_git} },
+);
+
+=attr no_commitbuild
+
+no_commitbuild attribute, do not create a build branch
+
+=cut
+
+has no_commitbuild => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub { $_[0]->payload->{no_commitbuild} },
 );
 
 =attr version_regexp 
@@ -361,7 +376,12 @@ sub configure {
             : 'ContributorsFromGit'
         ),
 
-        'PruneCruft',      # core
+        [
+            'PruneCruft' => {
+                except => '\.travis.yml',
+            }     # core
+        ],
+
         'ManifestSkip',    # core
 
         # file munging
@@ -377,10 +397,18 @@ sub configure {
         # generated distribution files
         'ReadmeAnyFromPod',    # in build dir
         [
-            ReadmeAnyFromPod => ReadmeInRoot =>
-              {                # also generate in root for github, etc.
+            ReadmeAnyFromPod => ReadmePodInRoot =>
+              {                # also generate README.pod in root for github, etc.
                 type     => 'pod',
                 filename => 'README.pod',
+                location => 'root',
+              }
+        ],
+        [
+            ReadmeAnyFromPod => ReadmeMarkdownInRoot =>
+              {                # also generate README.md (github friendly) file for github, etc.
+                type     => 'markdown',
+                filename => 'README.md',
                 location => 'root',
               }
         ],
@@ -396,13 +424,15 @@ sub configure {
         (
             $self->no_git
             ? [
-                'GatherDir' => {
-                    exclude_filename => $self->exclude_filename,
+                'GatherDir' => { 
+                    exclude_filename => $self->exclude_filename, 
+                    include_dotfiles => 1,
                 },
-              ]    # core
+              ]                # core
             : [
-                'Git::GatherDir' => {
-                    exclude_filename => $self->exclude_filename,
+                'Git::GatherDir' => { 
+                    exclude_filename => $self->exclude_filename, 
+                    include_dotfiles => 1,
                 },
             ]
         ),
@@ -461,6 +491,7 @@ sub configure {
         'MetaYAML'
         ,    # core : Helps avoid kwalitee croaks and supports older systems
         'MetaJSON',    # core
+        'TravisYML',
         [
             'ChangelogFromGit::CPAN::Changes' => {
                 tag_regexp             => $self->tag_regexp,
@@ -469,19 +500,22 @@ sub configure {
                 file_name              => 'Changes',
             }
         ],
-        [
-            'ChangelogFromGit::Debian' => {
-                tag_regexp             => $self->tag_regexp,
-                parse_version_from_tag => 1,
-                file_name              => 'debian/changelog',
-                maintainer_name        => 'Shantanu Bhadoria',
-                maintainer_email       => 'shantanu@cpan.org',
-            }
-        ],
         (
             $self->compile_for_debian
-            ?
-            [
+            ? [
+                'ChangelogFromGit::Debian' => {
+                    tag_regexp             => $self->tag_regexp,
+                    parse_version_from_tag => 1,
+                    file_name              => 'debian/changelog',
+                    maintainer_name        => 'Shantanu Bhadoria',
+                    maintainer_email       => 'shantanu@cpan.org',
+                }
+            ]
+            : ()
+        ),
+        (
+            $self->compile_for_debian
+            ? [
                 'Control::Debian' => {
                     file_name        => 'debian/control',
                     maintainer_name  => 'Shantanu Bhadoria',
@@ -500,13 +534,6 @@ sub configure {
             : $self->makemaker
         ),             # core
 
-        # copy files from build back to root for inclusion in VCS
-        [
-            CopyFilesFromBuild => {
-                copy => qw[META.yml Changes],
-            }
-        ],
-
         # manifest -- must come after all generated files
         'Manifest',    # core
 
@@ -516,7 +543,7 @@ sub configure {
             ? ()
             : [
                 'Git::Check' => {
-                    allow_dirty => [qw/dist.ini Changes README.md README.pod META.yml/]
+                    allow_dirty => [qw/dist.ini Changes README.md README.pod META.yml META.json/]
                 }
             ]
         ),
@@ -525,6 +552,18 @@ sub configure {
         'CheckExtraTests',
         'TestRelease',       # core
         'ConfirmRelease',    # core
+        (
+            $self->no_commitbuild
+            ? ()
+            : (
+                [
+                    'Git::CommitBuild' => 'Commit_to_build' => {
+                        release_branch => 'build/%b',
+                        release_message => 'Release build of v%v (on %b)'
+                    }
+                ]
+            )
+        ),
 
         # release
         ( $self->fake_release ? 'FakeRelease' : 'UploadToCPAN' ),    # core
