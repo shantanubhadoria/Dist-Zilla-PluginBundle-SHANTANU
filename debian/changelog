@@ -1,3 +1,8 @@
+dist-zilla-pluginbundle-shantanu (0.28) stable; urgency=low
+  * local changes 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Wed,  8 Apr 2015 11:53:47 +0000
+
 dist-zilla-pluginbundle-shantanu (release-0.27) stable; urgency=low
   * v0.27
   - adding markdown file to dirty list (Shantanu Bhadoria) 
