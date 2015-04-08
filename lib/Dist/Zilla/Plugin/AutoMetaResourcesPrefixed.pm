@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::AutoMetaResourcesPrefixed;
 
-our $VERSION = '0.29'; #VERSION
+our $VERSION = '0.30'; #VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::AutoMetaResources';
@@ -66,7 +66,7 @@ Dist::Zilla::Plugin::AutoMetaResourcesPrefixed
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 AUTHOR
 
