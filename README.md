@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 # VERSION
 
-version 0.34
+version 0.35
 
 # SYNOPSIS
 
@@ -160,12 +160,9 @@ public review and contribution under the terms of the license.
 
 Shantanu Bhadoria <shantanu@cpan.org> [https://www.shantanubhadoria.com](https://www.shantanubhadoria.com)
 
-# CONTRIBUTORS
+# CONTRIBUTOR
 
-- Shantanu <shantanu@cpan.org>
-- Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
-- Shantanu Bhadoria <shantanu@cpan.org>
-- Shantanu Bhadoria <shantanu@shantanu-M14xR2.(none)>
+Shantanu Bhadoria <shantanu att cpan dott org>
 
 # COPYRIGHT AND LICENSE
 
