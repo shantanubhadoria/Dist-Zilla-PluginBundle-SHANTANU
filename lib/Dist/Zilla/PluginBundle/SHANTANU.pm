@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -263,7 +263,7 @@ has git_remote => (
 sub configure {
     my $self = shift;
 
-    my @push_to = ( 'origin', 'master', 'build/master' );
+    my @push_to = ( 'origin', 'origin build/master' );
     push @push_to, $self->git_remote if $self->git_remote ne 'origin';
 
     $self->add_plugins(
@@ -484,11 +484,8 @@ sub configure {
             ? ()
             : (
                 [
-                    'Git::Commit' => 'Commit_Dirty_Files' => {
-                        allow_dirty => [
-                            qw/dist.ini Changes README.md README.pod META.json META.yml .travis.yml/
-                        ]
-                    }
+                    'Git::Commit' => 'Commit_Dirty_Files' =>
+                      { allow_dirty => [qw/dist.ini README.md .travis.yml/] }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
             )
@@ -539,7 +536,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
