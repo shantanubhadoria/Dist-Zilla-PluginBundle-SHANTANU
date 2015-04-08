@@ -1,7 +1,7 @@
 NAME
 
-    Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the
-    way I like to use it
+    Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way
+    I like to use it
 
 VERSION
 
@@ -14,11 +14,10 @@ SYNOPSIS
 
 DESCRIPTION
 
-    This is a Dist::Zilla PluginBundle. The way I use it. While this
-    bundle is customized to my needs, others might be better of forking
-    this repository and modifying it to their own needs or using the more
-    mature Plugin bundles that this is derived from like the one by David
-    Golden.
+    This is a Dist::Zilla PluginBundle. The way I use it. While this bundle
+    is customized to my needs, others might be better of forking this
+    repository and modifying it to their own needs or using the more mature
+    Plugin bundles that this is derived from like the one by David Golden.
 
 ATTRIBUTES
 
@@ -92,17 +91,17 @@ ATTRIBUTES
 
 USAGE
 
-    To use this PluginBundle, just add it to your dist.ini. You can
-    provide the following options:
+    To use this PluginBundle, just add it to your dist.ini. You can provide
+    the following options:
 
-      * is_task -- this indicates whether TaskWeaver or PodWeaver should
-      be used. Default is 0.
+      * is_task -- this indicates whether TaskWeaver or PodWeaver should be
+      used. Default is 0.
 
-      * auto_prereq -- this indicates whether AutoPrereq should be used
-      or not. Default is 1.
+      * auto_prereq -- this indicates whether AutoPrereq should be used or
+      not. Default is 1.
 
-      * tag_format -- given to Git::Tag. Default is 'release-%v' to be
-      more robust than just the version number when parsing versions for
+      * tag_format -- given to Git::Tag. Default is 'release-%v' to be more
+      robust than just the version number when parsing versions for
       Git::NextVersion
 
       * version_regexp -- given to Git::NextVersion. Default is
@@ -129,8 +128,8 @@ USAGE
     C<Git::NextVersion>, and all git check and commit operations are
     disabled.
 
-    This PluginBundle now supports ConfigSlicer, so you can pass in
-    options to the plugins used like this:
+    This PluginBundle now supports ConfigSlicer, so you can pass in options
+    to the plugins used like this:
 
        [@SHANTANU]
        ExecDir.dir = scripts ; overrides ExecDir
@@ -157,24 +156,23 @@ SUPPORT
  Bugs / Feature Requests
 
     Please report any bugs or feature requests through github at
-    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shan
-    tanu/issues. You will be notified automatically of any progress on
-    your issue.
+    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shanta
+    nu/issues. You will be notified automatically of any progress on your
+    issue.
 
  Source Code
 
     This is open source software. The code repository is available for
     public review and contribution under the terms of the license.
 
-    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shan
-    tanu
+    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shanta
+    nu
 
       git clone git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
 
 AUTHOR
 
-    Shantanu Bhadoria <shantanu@cpan.org>
-    https://www.shantanubhadoria.com
+    Shantanu Bhadoria <shantanu@cpan.org> https://www.shantanubhadoria.com
 
 CONTRIBUTORS
 

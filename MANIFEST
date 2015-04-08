@@ -6,7 +6,6 @@ META.json
 META.yml
 Makefile.PL
 README
-debian/changelog
 lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm
 lib/Dist/Zilla/PluginBundle/SHANTANU.pm
 lib/Pod/Weaver/PluginBundle/SHANTANU.pm
