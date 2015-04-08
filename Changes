@@ -1,6 +1,8 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.28 2015-04-08T04:27:33
+0.28 2015-04-08T04:36:15
+ - Fixed dirty debian files in build Adding the Readmes in git again
+   (Shantanu Bhadoria)
  - Trying removal of possibly unnecessary files (Shantanu Bhadoria)
  - local changes (Shantanu Bhadoria)
 

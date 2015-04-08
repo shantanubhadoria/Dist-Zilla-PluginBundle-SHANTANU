@@ -35,6 +35,10 @@ ATTRIBUTES
 
     no_git attribute
 
+ no_commitbuild
+
+    no_commitbuild attribute, do not create a build branch
+
  version_regexp
 
     version_regexp attribute
