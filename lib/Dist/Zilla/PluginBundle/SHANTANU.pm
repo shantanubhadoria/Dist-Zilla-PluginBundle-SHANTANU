@@ -76,7 +76,7 @@ with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 #Gather Stopwords that may skip spelling checks in pod testing
 sub mvp_multivalue_args { qw/stopwords exclude_filename/ }
 
-=attr no_git
+=attr makemaker 
 
 makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
 
@@ -543,7 +543,7 @@ sub configure {
             ? ()
             : [
                 'Git::Check' => {
-                    allow_dirty => [qw/dist.ini Changes README.md README.pod META.yml META.json/]
+                    allow_dirty => [qw/dist.ini Changes README.md README.pod META.yml META.json .travis.yml/]
                 }
             ]
         ),
@@ -580,7 +580,7 @@ sub configure {
                 [
                     'Git::Commit' => 'Commit_Dirty_Files' => {
                         allow_dirty =>
-                          [qw/dist.ini Changes README.md README.pod META.json META.yml/]
+                          [qw/dist.ini Changes README.md README.pod META.json META.yml .travis.yml/]
                     }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
