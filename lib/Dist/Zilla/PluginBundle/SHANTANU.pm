@@ -55,7 +55,6 @@ use Dist::Zilla::Plugin::MetaNoIndex;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
-use Dist::Zilla::Plugin::TravisYML 1.14;
 
 use Dist::Zilla::Plugin::PerlTidy;
 use Dist::Zilla::Plugin::MakeMaker::Awesome;
@@ -370,7 +369,6 @@ sub configure {
         'MetaYAML'
         ,    # core : Helps avoid kwalitee croaks and supports older systems
         'MetaJSON',    # core
-        'TravisYML',
         [
             'ChangelogFromGit::CPAN::Changes' => {
                 tag_regexp             => $self->tag_regexp,

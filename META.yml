@@ -78,7 +78,6 @@ requires:
   Dist::Zilla::Plugin::Test::Portability: 0
   Dist::Zilla::Plugin::Test::ReportPrereqs: 0
   Dist::Zilla::Plugin::Test::Version: 0
-  Dist::Zilla::Plugin::TravisYML: 1.14
   Dist::Zilla::PluginBundle::Git: 2.028
   Dist::Zilla::Role::PluginBundle::Config::Slicer: 0
   Dist::Zilla::Role::PluginBundle::Easy: 0
