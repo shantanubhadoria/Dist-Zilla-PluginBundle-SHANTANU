@@ -555,7 +555,7 @@ this is derived from like the one by David Golden.
 
 =head1 ATTRIBUTES
 
-=head2 no_git
+=head2 makemaker 
 
 makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
 

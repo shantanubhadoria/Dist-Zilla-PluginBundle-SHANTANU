@@ -21,7 +21,7 @@ DESCRIPTION
 
 ATTRIBUTES
 
- no_git
+ makemaker
 
     makemaker attribute By default uses [MakeMaker::Awesome] This can be
     overriden by defining this attribute
