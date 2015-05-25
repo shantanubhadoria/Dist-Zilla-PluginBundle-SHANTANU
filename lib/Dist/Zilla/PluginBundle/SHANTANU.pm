@@ -260,6 +260,23 @@ has no_coverage => (
     },
 );
 
+=attr test_compile
+
+Create compile tests.
+
+=cut
+
+has test_compile => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{test_compile}
+          ? $_[0]->payload->{test_compile}
+          : 1;
+    },
+);
+
 =attr auto_prereq
 
 Automatically get prerequisites(default 1)
@@ -416,7 +433,11 @@ sub configure {
         'License',             # core
 
         # generated t/ tests
-        [ 'Test::Compile'        => { fake_home       => 1 } ],
+        (
+            $self->test_compile
+            ? [ 'Test::Compile'        => { fake_home       => 1 } ]
+            : ()
+        ),
         [ 'Test::MinimumVersion' => { max_target_perl => '5.010' } ],
         'Test::ReportPrereqs',
 
