@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.36'; # VERSION
+our $VERSION = '0.37'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -171,6 +171,18 @@ has stopwords => (
     lazy    => 1,
     default => sub {
         exists $_[0]->payload->{stopwords} ? $_[0]->payload->{stopwords} : [];
+    },
+);
+
+
+has skip_prereqs => (
+    is      => 'ro',
+    isa     => 'ArrayRef',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{skip_prereqs}
+          ? $_[0]->payload->{skip_prereqs}
+          : ["^t::lib"];
     },
 );
 
@@ -378,7 +390,7 @@ sub configure {
         'MinimumPerl',
         (
             $self->auto_prereq
-            ? [ 'AutoPrereqs' => { skip => "^t::lib" } ]
+            ? [ 'AutoPrereqs' => { skip => $skip_prereqs } ]
             : ()
         ),
 
@@ -534,7 +546,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.36
+version 0.37
 
 =head1 SYNOPSIS
 
@@ -592,6 +604,10 @@ list of filenames to exclude e.g.
 =head2 stopwords
 
 Stopwords to exclude for spell checks in pod
+
+=head2 skip_prereqs 
+
+Skip following as prereqs from autorpereqs
 
 =head2 no_critic
 
