@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 # VERSION
 
-version 0.37
+version 0.38
 
 # SYNOPSIS
 
