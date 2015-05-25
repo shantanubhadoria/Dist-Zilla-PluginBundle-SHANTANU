@@ -197,6 +197,18 @@ has no_coverage => (
 );
 
 
+has test_compile => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{test_compile}
+          ? $_[0]->payload->{test_compile}
+          : 1;
+    },
+);
+
+
 has auto_prereq => (
     is      => 'ro',
     isa     => 'Bool',
@@ -324,7 +336,11 @@ sub configure {
         'License',    # core
 
         # generated t/ tests
-        [ 'Test::Compile'        => { fake_home       => 1 } ],
+        (
+            $self->test_compile
+            ? [ 'Test::Compile' => { fake_home => 1 } ]
+            : ()
+        ),
         [ 'Test::MinimumVersion' => { max_target_perl => '5.010' } ],
         'Test::ReportPrereqs',
 
@@ -600,6 +616,10 @@ Skip Perl Critic Checks
 =head2 no_coverage
 
 Skip Pod Coverage tests
+
+=head2 test_compile
+
+Create compile tests.
 
 =head2 auto_prereq
 

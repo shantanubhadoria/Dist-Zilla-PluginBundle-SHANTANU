@@ -72,6 +72,10 @@ ATTRIBUTES
 
     Skip Pod Coverage tests
 
+ test_compile
+
+    Create compile tests.
+
  auto_prereq
 
     Automatically get prerequisites(default 1)
