@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 # VERSION
 
-version 0.36
+version 0.37
 
 # SYNOPSIS
 
@@ -70,6 +70,10 @@ Skip Perl Critic Checks
 ## no\_coverage
 
 Skip Pod Coverage tests
+
+## test\_compile
+
+Create compile tests.
 
 ## auto\_prereq
 
