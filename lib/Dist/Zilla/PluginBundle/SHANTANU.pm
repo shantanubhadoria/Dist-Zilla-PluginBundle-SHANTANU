@@ -175,18 +175,6 @@ has stopwords => (
 );
 
 
-has skip_prereqs => (
-    is      => 'ro',
-    isa     => 'ArrayRef',
-    lazy    => 1,
-    default => sub {
-        exists $_[0]->payload->{skip_prereqs}
-          ? $_[0]->payload->{skip_prereqs}
-          : ["^t::lib"];
-    },
-);
-
-
 has no_critic => (
     is      => 'ro',
     isa     => 'Bool',
@@ -390,7 +378,7 @@ sub configure {
         'MinimumPerl',
         (
             $self->auto_prereq
-            ? [ 'AutoPrereqs' => { skip => $self->skip_prereqs } ]
+            ? [ 'AutoPrereqs' => { skip => "^t::lib" } ]
             : ()
         ),
 
@@ -604,10 +592,6 @@ list of filenames to exclude e.g.
 =head2 stopwords
 
 Stopwords to exclude for spell checks in pod
-
-=head2 skip_prereqs 
-
-Skip following as prereqs from autorpereqs
 
 =head2 no_critic
 

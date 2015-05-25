@@ -64,10 +64,6 @@ ATTRIBUTES
 
     Stopwords to exclude for spell checks in pod
 
- skip_prereqs
-
-    Skip following as prereqs from autorpereqs
-
  no_critic
 
     Skip Perl Critic Checks
