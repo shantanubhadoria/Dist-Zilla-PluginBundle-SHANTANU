@@ -390,7 +390,7 @@ sub configure {
         'MinimumPerl',
         (
             $self->auto_prereq
-            ? [ 'AutoPrereqs' => { skip => $skip_prereqs } ]
+            ? [ 'AutoPrereqs' => { skip => $self->skip_prereqs } ]
             : ()
         ),
 
