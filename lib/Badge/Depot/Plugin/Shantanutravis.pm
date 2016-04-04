@@ -39,7 +39,7 @@ has repo => (
 has branch => (
     is      => 'ro',
     isa     => Str,
-    default => 'master',
+    default => 'build/master',
 );
 has _meta => (
     is        => 'ro',
