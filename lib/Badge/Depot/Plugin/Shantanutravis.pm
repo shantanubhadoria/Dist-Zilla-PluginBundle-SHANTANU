@@ -30,9 +30,8 @@ has repo => (
     lazy    => 1,
     default => sub {
         my $self = shift;
-        if ( $self->has_meta ) {
-            return 'perl-' . $self->_meta->{'repo'}
-              if exists $self->_meta->{'repo'};
+        if ( $self->zilla ) {
+            return 'perl-' . $self->zilla->name;
         }
     },
 );
