@@ -51,15 +51,15 @@ has _meta => (
 sub _build_meta {
     my $self = shift;
 
-    return if !path('META.json')->exists;
+    return {} if !path('META.json')->exists;
 
     my $json = path('META.json')->slurp_utf8;
     my $data = decode_json($json);
 
-    return if !exists $data->{'resources'}{'repository'}{'web'};
+    return {} if !exists $data->{'resources'}{'repository'}{'web'};
 
     my $repository = $data->{'resources'}{'repository'}{'web'};
-    return
+    return {}
       if $repository !~
       m{^https://(?:www\.)?github\.com/([^/]+)/(.*)(?:\.git)?$};
 
