@@ -40,12 +40,14 @@ sub mvp_bundle_config {
             '@SHANTANU/Badges',
             _exp('Badges'),
             {
-                perldoc            => 0,
-                websites           => 'none',
-                bugs               => 'metadata',
-                bugs_content       => $bugtracker_content,
-                repository_link    => 'both',
-                repository_content => $repo_intro
+                section        => 'BUILD STATUS',
+                formats        => 'html',
+                badge          => 'Travis',
+                badge          => 'Gratipay',
+                -travis_user   => 'shantanubhadoria',
+                -travis_repo   => 'perl-Math-KalmanFilter',
+                -travis_branch => 'build/master',
+                -gratipay_user => 'shantanubhadoria',
             }
         ],
 
