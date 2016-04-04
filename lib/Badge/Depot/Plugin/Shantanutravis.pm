@@ -3,6 +3,9 @@ use warnings;
 
 package Badge::Depot::Plugin::Shantanutravis;
 
+our $VERSION = '0.39'; # VERSION
+
+# Dependencies
 use Moose;
 use namespace::autoclean;
 use Types::Standard qw/Str HashRef/;
@@ -11,6 +14,7 @@ use JSON::MaybeXS 'decode_json';
 with 'Badge::Depot';
 
 # ABSTRACT: Shantanu Bhadoria's Travis plugin for Badge::Depot based off Badge::Depot::Plugin::Travis
+
 
 has user => (
     is      => 'ro',
@@ -24,6 +28,8 @@ has user => (
         }
     },
 );
+
+
 has repo => (
     is      => 'ro',
     isa     => Str,
@@ -35,11 +41,14 @@ has repo => (
         }
     },
 );
+
+
 has branch => (
     is      => 'ro',
     isa     => Str,
     default => 'build/master',
 );
+
 has _meta => (
     is        => 'ro',
     isa       => HashRef,
@@ -98,6 +107,14 @@ Badge::Depot::Plugin::Shantanutravis - Shantanu Bhadoria's Travis plugin for Bad
 =head1 VERSION
 
 version 0.39
+
+=head1 ATTRIBUTES
+
+=head2 user
+
+=head2 repo
+
+=head2 branch
 
 =head1 METHODS
 
