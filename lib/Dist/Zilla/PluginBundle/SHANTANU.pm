@@ -21,7 +21,7 @@ use Dist::Zilla::PluginBundle::Git 2.028;
 use Dist::Zilla::Plugin::Git::NextVersion;
 use Dist::Zilla::Plugin::AutoMetaResourcesPrefixed;
 
-use Dist::Zilla::Plugin::ContributorsFromGit;
+use Dist::Zilla::Plugin::Git::Contributors;
 
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -391,7 +391,7 @@ sub configure {
         (
             $self->no_git
             ? ()
-            : 'ContributorsFromGit'
+            : 'Git::Contributors'
         ),
 
         [
