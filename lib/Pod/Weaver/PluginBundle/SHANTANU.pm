@@ -11,6 +11,7 @@ use Pod::Weaver::Config::Assembler;
 # Dependencies
 use Pod::Weaver::Plugin::WikiDoc ();
 use Pod::Elemental::Transformer::List 0.101620 ();
+use Pod::Weaver::Section::Badges 0.0402        ();
 use Pod::Weaver::Section::Support 1.001        ();
 use Pod::Weaver::Section::Contributors 0.001   ();
 
@@ -35,6 +36,18 @@ sub mvp_bundle_config {
         [ '@SHANTANU/CorePrep', _exp('@CorePrep'), {} ],
         [ '@SHANTANU/Name',     _exp('Name'),      {} ],
         [ '@SHANTANU/Version',  _exp('Version'),   {} ],
+        [
+            '@SHANTANU/Badges',
+            _exp('Badges'),
+            {
+                perldoc            => 0,
+                websites           => 'none',
+                bugs               => 'metadata',
+                bugs_content       => $bugtracker_content,
+                repository_link    => 'both',
+                repository_content => $repo_intro
+            }
+        ],
 
         [ '@SHANTANU/Prelude', _exp('Region'), { region_name => 'prelude' } ],
         [ '@SHANTANU/Synopsis', _exp('Generic'), { header => 'SYNOPSIS' } ],
