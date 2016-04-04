@@ -74,7 +74,7 @@ sub mvp_bundle_config {
                 badge   => [
                     'Perl',        'Shantanutravis',
                     'Cpantesters', 'Kwalitee',
-                    'Coverage',    'Gratipay'
+                    'Gratipay'
                 ],
                 -perl_version        => '5.10+',
                 -shantanutravis_user => 'shantanubhadoria',
