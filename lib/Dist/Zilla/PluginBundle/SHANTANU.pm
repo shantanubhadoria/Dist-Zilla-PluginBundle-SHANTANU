@@ -64,7 +64,7 @@ use Dist::Zilla::Plugin::MakeMaker::Awesome;
 use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::CheckMetaResources;
 use Dist::Zilla::Plugin::CheckPrereqsIndexed;
-use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes 0.0.15;
+use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes 0.109;
 use Dist::Zilla::Plugin::ChangelogFromGit::Debian;
 use Dist::Zilla::Plugin::Control::Debian;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
@@ -77,7 +77,7 @@ with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 #Gather Stopwords that may skip spelling checks in pod testing
 sub mvp_multivalue_args { qw/stopwords exclude_filename/ }
 
-=attr makemaker 
+=attr makemaker
 
 makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
 
@@ -94,7 +94,7 @@ has makemaker => (
     },
 );
 
-=attr skip_makemaker 
+=attr skip_makemaker
 
 Skip Default Makemaker option to add your own plugin for generating makefile
 
@@ -133,7 +133,7 @@ has no_commitbuild => (
     default => sub { $_[0]->payload->{no_commitbuild} },
 );
 
-=attr version_regexp 
+=attr version_regexp
 
 version_regexp attribute
 
@@ -310,7 +310,7 @@ has fake_release => (
 
 Regex for obtaining the version number from git tag
 
-=cut 
+=cut
 
 has tag_regexp => (
     is      => 'ro',
@@ -446,14 +446,14 @@ sub configure {
         (
             $self->no_git
             ? [
-                'GatherDir' => { 
-                    exclude_filename => $self->exclude_filename, 
+                'GatherDir' => {
+                    exclude_filename => $self->exclude_filename,
                     include_dotfiles => 1,
                 },
               ]                # core
             : [
-                'Git::GatherDir' => { 
-                    exclude_filename => $self->exclude_filename, 
+                'Git::GatherDir' => {
+                    exclude_filename => $self->exclude_filename,
                     include_dotfiles => 1,
                 },
             ]
@@ -655,10 +655,10 @@ taskweaver uploadtocpan dist ini
 
 = DESCRIPTION
 
-This is a [Dist::Zilla] PluginBundle. The way I use it. While this bundle is 
-customized to my needs, others might be better of forking this repository and 
-modifying it to their own needs or using the more mature Plugin bundles that 
-this is derived from like the one by David Golden. 
+This is a [Dist::Zilla] PluginBundle. The way I use it. While this bundle is
+customized to my needs, others might be better of forking this repository and
+modifying it to their own needs or using the more mature Plugin bundles that
+this is derived from like the one by David Golden.
 
 = USAGE
 
