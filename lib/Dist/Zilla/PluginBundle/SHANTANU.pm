@@ -557,6 +557,16 @@ __END__
 
 Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to use it
 
+
+
+=begin html
+
+<p>
+<a href="https://travis-ci.org/shantanubhadoria/perl-Math-KalmanFilter"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Math-KalmanFilter.svg?branch=build/master" alt="Travis status" /></a>
+</p>
+
+=end html
+
 =head1 VERSION
 
 version 0.39
