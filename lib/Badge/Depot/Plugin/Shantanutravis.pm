@@ -75,6 +75,7 @@ sub _build_meta {
     };
 }
 
+
 sub BUILD {
     my $self = shift;
     $self->link_url( sprintf 'https://travis-ci.org/%s/%s',
@@ -97,6 +98,10 @@ Badge::Depot::Plugin::Shantanutravis - Shantanu Bhadoria's Travis plugin for Bad
 =head1 VERSION
 
 version 0.39
+
+=head1 METHODS
+
+=head2 BUILD
 
 =head1 AUTHOR
 
