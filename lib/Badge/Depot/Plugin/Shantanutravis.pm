@@ -31,8 +31,8 @@ has repo => (
     default => sub {
         my $self = shift;
         if ( $self->has_meta ) {
-            return 'perl-' . $self->get_meta->{'dist'}
-              if exists $self->get_meta->{'dist'};
+            return 'perl-' . $self->_meta->{'repo'}
+              if exists $self->_meta->{'repo'};
         }
     },
 );
@@ -50,6 +50,13 @@ has _meta => (
 
 sub _build_meta {
     my $self = shift;
+
+    if ( $self->zilla ) {
+        return {
+            repo    => 'perl-' . $self->zilla->name,
+            version => $self->zilla->version,
+        };
+    }
 
     return {} if !path('META.json')->exists;
 
