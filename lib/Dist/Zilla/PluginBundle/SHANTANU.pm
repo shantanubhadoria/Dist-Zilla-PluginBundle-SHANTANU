@@ -64,7 +64,7 @@ use Dist::Zilla::Plugin::MakeMaker::Awesome;
 use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::CheckMetaResources;
 use Dist::Zilla::Plugin::CheckPrereqsIndexed;
-use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes 0.0.15;
+use Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes 0.109;
 use Dist::Zilla::Plugin::ChangelogFromGit::Debian;
 use Dist::Zilla::Plugin::Control::Debian;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
@@ -582,18 +582,18 @@ version 0.39
 
 =head1 DESCRIPTION
 
-This is a L<Dist::Zilla> PluginBundle. The way I use it. While this bundle is 
-customized to my needs, others might be better of forking this repository and 
-modifying it to their own needs or using the more mature Plugin bundles that 
-this is derived from like the one by David Golden. 
+This is a L<Dist::Zilla> PluginBundle. The way I use it. While this bundle is
+customized to my needs, others might be better of forking this repository and
+modifying it to their own needs or using the more mature Plugin bundles that
+this is derived from like the one by David Golden.
 
 =head1 ATTRIBUTES
 
-=head2 makemaker 
+=head2 makemaker
 
 makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute
 
-=head2 skip_makemaker 
+=head2 skip_makemaker
 
 Skip Default Makemaker option to add your own plugin for generating makefile
 
@@ -605,7 +605,7 @@ no_git attribute
 
 no_commitbuild attribute, do not create a build branch
 
-=head2 version_regexp 
+=head2 version_regexp
 
 version_regexp attribute
 

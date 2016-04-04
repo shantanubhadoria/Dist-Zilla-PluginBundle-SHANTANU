@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.39 2016-04-04T08:50:26
+0.39 2016-04-04T08:52:03
+ - fixed prereq version (Shantanu Bhadoria)
  - added coverage (Shantanu Bhadoria)
  - Modified reamdme (Shantanu Bhadoria)
  - Added Badges (Shantanu Bhadoria)
