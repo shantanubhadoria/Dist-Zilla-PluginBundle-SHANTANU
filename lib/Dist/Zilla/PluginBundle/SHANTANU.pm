@@ -650,4 +650,141 @@ Git Tag format
 
 =head2 git_remote
 
+=for stopwords autoprereq dagolden fakerelease pluginbundle podweaver
+taskweaver uploadtocpan dist ini
+
+=for Pod::Coverage configure mvp_multivalue_args
+
+=head1 USAGE
+
+To use this PluginBundle, just add it to your dist.ini.  You can provide
+the following options:
+
+=over
+
+=item *
+
+C<<< is_task >>> -- this indicates whether TaskWeaver or PodWeaver should be used.
+Default is 0.
+
+=item *
+
+C<<< auto_prereq >>> -- this indicates whether AutoPrereq should be used or not.
+Default is 1.
+
+=item *
+
+C<<< tag_format >>> -- given to C<<< Git::Tag >>>.  Default is 'release-%v' to be more
+robust than just the version number when parsing versions for
+C<<< Git::NextVersion >>>
+
+=item *
+
+C<<< version_regexp >>> -- given to C<<< Git::NextVersion >>>.  Default
+is '^release-(.+)$'
+
+=item *
+
+C<<< fake_release >>> -- swaps FakeRelease for UploadToCPAN. Mostly useful for
+testing a dist.ini without risking a real release.
+
+=item *
+
+C<<< weaver_config >>> -- specifies a Pod::Weaver bundle.  Defaults to @SHANTANU.
+
+=item *
+
+C<<< stopwords >>> -- add stopword for Test::PodSpelling (can be repeated)
+
+=item *
+
+C<<< no_git >>> -- bypass all git-dependent plugins
+
+=item *
+
+C<<< no_critic >>> -- omit Test::Perl::Critic tests
+
+=item *
+
+C<<< no_spellcheck >>> -- omit Test::PodSpelling tests
+
+=item *
+
+C<<< no_coverage >>> -- omit Pod Coverage tests
+
+=back
+
+When running without git, CE<lt>GatherDirE<gt> is used instead of CE<lt>Git::GatherDirE<gt>,
+CE<lt>AutoVersionE<gt> is used instead of CE<lt>Git::NextVersionE<gt>, and all git check and
+commit operations are disabled.
+
+This PluginBundle now supports ConfigSlicer, so you can pass in options to the
+plugins used like this:
+
+   [@SHANTANU]
+   ExecDir.dir = scripts ; overrides ExecDir
+
+=head1 COMMON PATTERNS
+
+=head2 use github instead of RT
+
+   [@SHANTANU]
+   :version = 0.32
+   AutoMetaResourcesPrefixed.bugtracker.github = user:shantanu
+   AutoMetaResourcesPrefixed.bugtracker.rt = 0
+
+=head1 SEE ALSO
+
+=over
+
+=item *
+
+L<Dist::Zilla>
+
+=item *
+
+L<Dist::Zilla::Plugin::PodWeaver>
+
+=item *
+
+L<Dist::Zilla::Plugin::TaskWeaver>
+
+=back
+
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
+
+=head1 SUPPORT
+
+=head2 Bugs / Feature Requests
+
+Please report any bugs or feature requests through github at 
+L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues>.
+You will be notified automatically of any progress on your issue.
+
+=head2 Source Code
+
+This is open source software.  The code repository is available for
+public review and contribution under the terms of the license.
+
+L<https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu>
+
+  git clone git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
+
+=head1 AUTHOR
+
+Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
+
+=head1 CONTRIBUTOR
+
+=for stopwords Shantanu Bhadoria
+
+Shantanu Bhadoria <shantanu att cpan dott org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Shantanu Bhadoria.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut

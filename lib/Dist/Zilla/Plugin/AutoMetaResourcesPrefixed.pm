@@ -70,4 +70,15 @@ Dist::Zilla::Plugin::AutoMetaResourcesPrefixed
 
 version 0.39
 
+=head1 AUTHOR
+
+Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Shantanu Bhadoria.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
