@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.38'; # VERSION
+our $VERSION = '0.39'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -299,10 +299,12 @@ sub configure {
         ),
 
         [
-            'PruneCruft' => { except => '\.travis.yml', }    # core
+            'PruneCruft' => {
+                except => '\.travis.yml',
+              }    # core
         ],
 
-        'ManifestSkip',                                      # core
+        'ManifestSkip',    # core
 
         # file munging
         'OurPkgVersion',
@@ -380,7 +382,11 @@ sub configure {
             $self->no_critic ? ()
             : ('Test::Perl::Critic')
         ),
-        [ 'Test::Kwalitee::Extra' => { has_corpus => 0, }, ],
+        [
+            'Test::Kwalitee::Extra' => {
+                has_corpus => 0,
+            },
+        ],
         'MetaTests',         # core
         'PodSyntaxTests',    # core
         (
@@ -498,8 +504,9 @@ sub configure {
             ? ()
             : (
                 [
-                    'Git::Commit' => 'Commit_Dirty_Files' =>
-                      { allow_dirty => [qw/dist.ini README.md .travis.yml/] }
+                    'Git::Commit' => 'Commit_Dirty_Files' => {
+                        allow_dirty => [qw/dist.ini README.md .travis.yml/]
+                    }
                 ],
                 [ 'Git::Tag' => { tag_format => $self->tag_format } ],
             )
@@ -507,8 +514,9 @@ sub configure {
 
         # bumps Changes
         [
-            'NextRelease' =>
-              { format => '%n%v%n%n%t- %{yyyy-MM-dd HH:mm:ss VVVV}d%n', },
+            'NextRelease' => {
+                format => '%n%v%n%n%t- %{yyyy-MM-dd HH:mm:ss VVVV}d%n',
+            },
         ],    # core (also munges files)
 
         (
@@ -534,7 +542,7 @@ __PACKAGE__->meta->make_immutable;
 #
 # This file is part of Dist-Zilla-PluginBundle-SHANTANU
 #
-# This software is copyright (c) 2015 by Shantanu Bhadoria.
+# This software is copyright (c) 2016 by Shantanu Bhadoria.
 #
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
@@ -550,7 +558,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.38
+version 0.39
 
 =head1 SYNOPSIS
 
@@ -773,7 +781,7 @@ Shantanu Bhadoria <shantanu att cpan dott org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Shantanu Bhadoria.
+This software is copyright (c) 2016 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

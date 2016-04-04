@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::AutoMetaResourcesPrefixed;
 
-our $VERSION = '0.38'; #VERSION
+our $VERSION = '0.39'; #VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::AutoMetaResources';
@@ -50,7 +50,9 @@ sub _build__bugtracker_map {
             web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=%{dist}',
             mailto => 'bug-%{dist}@rt.cpan.org',
         },
-        github => { web => 'https://github.com/%{user}/perl-%{lcdist}/issues', }
+        github => {
+            web => 'https://github.com/%{user}/perl-%{lcdist}/issues',
+        }
     };
 }
 
@@ -66,7 +68,7 @@ Dist::Zilla::Plugin::AutoMetaResourcesPrefixed
 
 =head1 VERSION
 
-version 0.38
+version 0.39
 
 =head1 AUTHOR
 
@@ -74,7 +76,7 @@ Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Shantanu Bhadoria.
+This software is copyright (c) 2016 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -4,7 +4,7 @@
       "Shantanu Bhadoria <shantanu@cpan.org> L<https://www.shantanubhadoria.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.034, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "Dist::Zilla version 5.043, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -15,11 +15,11 @@
    "name" : "Dist-Zilla-PluginBundle-SHANTANU",
    "no_index" : {
       "directory" : [
-         "t",
-         "xt",
-         "examples",
          "corpus",
-         "inc"
+         "examples",
+         "inc",
+         "t",
+         "xt"
       ],
       "package" : [
          "DB"
@@ -34,8 +34,11 @@
       },
       "develop" : {
          "requires" : {
+            "English" : "0",
             "Pod::Coverage::TrustPod" : "0",
+            "Pod::Wordlist" : "0",
             "Test::CPAN::Meta" : "0",
+            "Test::Kwalitee::Extra" : "0",
             "Test::More" : "0",
             "Test::Pod" : "1.41",
             "Test::Pod::Coverage" : "1.08",
@@ -115,6 +118,7 @@
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "Test::More" : "0",
+            "blib" : "1.01",
             "perl" : "5.010"
          }
       }
@@ -122,15 +126,15 @@
    "provides" : {
       "Dist::Zilla::Plugin::AutoMetaResourcesPrefixed" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "Dist::Zilla::PluginBundle::SHANTANU" : {
          "file" : "lib/Dist/Zilla/PluginBundle/SHANTANU.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "Pod::Weaver::PluginBundle::SHANTANU" : {
          "file" : "lib/Pod/Weaver/PluginBundle/SHANTANU.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       }
    },
    "release_status" : "stable",
@@ -145,7 +149,7 @@
          "web" : "https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu"
       }
    },
-   "version" : "0.38",
+   "version" : "0.39",
    "x_contributors" : [
       "Shantanu Bhadoria <shantanu att cpan dott org>"
    ]
