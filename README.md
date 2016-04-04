@@ -23,18 +23,18 @@ version 0.39
 
 # DESCRIPTION
 
-This is a [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) PluginBundle. The way I use it. While this bundle is 
-customized to my needs, others might be better of forking this repository and 
-modifying it to their own needs or using the more mature Plugin bundles that 
-this is derived from like the one by David Golden. 
+This is a [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) PluginBundle. The way I use it. While this bundle is
+customized to my needs, others might be better of forking this repository and
+modifying it to their own needs or using the more mature Plugin bundles that
+this is derived from like the one by David Golden.
 
 # ATTRIBUTES
 
-## makemaker 
+## makemaker
 
 makemaker attribute By default uses \[MakeMaker::Awesome\] This can be overriden by defining this attribute
 
-## skip\_makemaker 
+## skip\_makemaker
 
 Skip Default Makemaker option to add your own plugin for generating makefile
 
@@ -46,7 +46,7 @@ no\_git attribute
 
 no\_commitbuild attribute, do not create a build branch
 
-## version\_regexp 
+## version\_regexp
 
 version\_regexp attribute
 
