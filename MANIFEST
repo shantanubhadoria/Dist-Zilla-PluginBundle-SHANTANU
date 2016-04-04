@@ -7,6 +7,7 @@ META.json
 META.yml
 Makefile.PL
 README
+lib/Badge/Depot/Plugin/Shantanutravis.pm
 lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm
 lib/Dist/Zilla/PluginBundle/SHANTANU.pm
 lib/Pod/Weaver/PluginBundle/SHANTANU.pm

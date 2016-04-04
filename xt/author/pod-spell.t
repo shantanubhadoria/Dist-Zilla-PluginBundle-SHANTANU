@@ -27,9 +27,12 @@ cpan
 dott
 org
 lib
+Badge
+Depot
+Plugin
+Shantanutravis
 Dist
 Zilla
-Plugin
 AutoMetaResourcesPrefixed
 PluginBundle
 SHANTANU

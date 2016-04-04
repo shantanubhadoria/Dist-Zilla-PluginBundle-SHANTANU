@@ -48,6 +48,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Badge::Depot" : "0",
             "Dist::Zilla" : "4.3",
             "Dist::Zilla::Plugin::AutoMetaResources" : "0",
             "Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes" : "v0.0.15",
@@ -91,8 +92,10 @@
             "Dist::Zilla::PluginBundle::Git" : "2.028",
             "Dist::Zilla::Role::PluginBundle::Config::Slicer" : "0",
             "Dist::Zilla::Role::PluginBundle::Easy" : "0",
+            "JSON::MaybeXS" : "0",
             "Moose" : "0.99",
             "Moose::Autobox" : "0",
+            "Path::Tiny" : "0",
             "Pod::Elemental::Transformer::List" : "0.101620",
             "Pod::Weaver" : "3.101638",
             "Pod::Weaver::Config::Assembler" : "0",
@@ -101,6 +104,7 @@
             "Pod::Weaver::Section::Contributors" : "0.001",
             "Pod::Weaver::Section::Support" : "1.001",
             "Test::Portability::Files" : "0.06",
+            "Types::Standard" : "0",
             "autodie" : "2.00",
             "namespace::autoclean" : "0.09",
             "perl" : "5.010",
@@ -125,6 +129,10 @@
       }
    },
    "provides" : {
+      "Badge::Depot::Plugin::Shantanutravis" : {
+         "file" : "lib/Badge/Depot/Plugin/Shantanutravis.pm",
+         "version" : "0.39"
+      },
       "Dist::Zilla::Plugin::AutoMetaResourcesPrefixed" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm",
          "version" : "0.39"
