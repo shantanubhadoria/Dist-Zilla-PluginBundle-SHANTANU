@@ -45,6 +45,8 @@ provides:
     version: 0.39
 requires:
   Badge::Depot: 0
+  Badge::Depot::Plugin::Gratipay: 0
+  Badge::Depot::Plugin::Travis: 0
   Dist::Zilla: 4.3
   Dist::Zilla::Plugin::AutoMetaResources: 0
   Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes: v0.0.15

@@ -20,6 +20,8 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::PluginBundle::SHANTANU",
   "PREREQ_PM" => {
     "Badge::Depot" => 0,
+    "Badge::Depot::Plugin::Gratipay" => 0,
+    "Badge::Depot::Plugin::Travis" => 0,
     "Dist::Zilla" => "4.3",
     "Dist::Zilla::Plugin::AutoMetaResources" => 0,
     "Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes" => "v0.0.15",
@@ -98,6 +100,8 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Badge::Depot" => 0,
+  "Badge::Depot::Plugin::Gratipay" => 0,
+  "Badge::Depot::Plugin::Travis" => 0,
   "Dist::Zilla" => "4.3",
   "Dist::Zilla::Plugin::AutoMetaResources" => 0,
   "Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes" => "0.0.15",
