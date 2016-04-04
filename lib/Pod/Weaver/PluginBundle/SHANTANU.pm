@@ -10,6 +10,9 @@ use Pod::Weaver::Config::Assembler;
 # Dependencies
 use Pod::Weaver::Plugin::WikiDoc ();
 use Pod::Elemental::Transformer::List 0.101620 ();
+use Pod::Weaver::Section::Badges 0.0402        ();
+use Badge::Depot::Plugin::Travis;
+use Badge::Depot::Plugin::Gratipay;
 use Pod::Weaver::Section::Support 1.001        ();
 use Pod::Weaver::Section::Contributors 0.001   ();
 
@@ -37,7 +40,6 @@ sub mvp_bundle_config {
         [ '@SHANTANU/CorePrep', _exp('@CorePrep'), {} ],
         [ '@SHANTANU/Name',     _exp('Name'),      {} ],
         [ '@SHANTANU/Version',  _exp('Version'),   {} ],
-
         [ '@SHANTANU/Prelude',     _exp('Region'),  { region_name => 'prelude' } ],
         [ '@SHANTANU/Synopsis',    _exp('Generic'), { header      => 'SYNOPSIS' } ],
         [ '@SHANTANU/Description', _exp('Generic'), { header      => 'DESCRIPTION' } ],
@@ -63,6 +65,18 @@ sub mvp_bundle_config {
       (
         [ '@SHANTANU/Leftovers', _exp('Leftovers'), {} ],
         [ '@SHANTANU/postlude', _exp('Region'), { region_name => 'postlude' } ],
+        [
+            '@SHANTANU/Badges',
+            _exp('Badges'),
+            {
+                formats        => 'html',
+                badge          => ['Perl', 'Shantanutravis', 'Cpantesters', 'Kwalitee', 'Gratipay'],
+                -perl_version  => '5.10+',
+                -shantanutravis_user   => 'shantanubhadoria',
+                -travis_branch => 'build/master',
+                -gratipay_user => 'shantanubhadoria',
+            }
+        ],
         [
             '@SHANTANU/Support',
             _exp('Support'),

@@ -31,6 +31,7 @@ use Dist::Zilla::Plugin::InsertCopyright;
 
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::PodWeaver;
+use Pod::Weaver::Section::Badges;
 
 use Dist::Zilla::Plugin::ReadmeAnyFromPod;
 
