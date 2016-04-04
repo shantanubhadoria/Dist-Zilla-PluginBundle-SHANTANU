@@ -40,7 +40,6 @@ sub mvp_bundle_config {
             '@SHANTANU/Badges',
             _exp('Badges'),
             {
-                section        => 'BUILD STATUS',
                 formats        => 'html',
                 badge          => 'Travis',
                 badge          => 'Gratipay',
