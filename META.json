@@ -133,19 +133,19 @@
    "provides" : {
       "Badge::Depot::Plugin::Shantanutravis" : {
          "file" : "lib/Badge/Depot/Plugin/Shantanutravis.pm",
-         "version" : "0.39"
+         "version" : "0.40"
       },
       "Dist::Zilla::Plugin::AutoMetaResourcesPrefixed" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoMetaResourcesPrefixed.pm",
-         "version" : "0.39"
+         "version" : "0.40"
       },
       "Dist::Zilla::PluginBundle::SHANTANU" : {
          "file" : "lib/Dist/Zilla/PluginBundle/SHANTANU.pm",
-         "version" : "0.39"
+         "version" : "0.40"
       },
       "Pod::Weaver::PluginBundle::SHANTANU" : {
          "file" : "lib/Pod/Weaver/PluginBundle/SHANTANU.pm",
-         "version" : "0.39"
+         "version" : "0.40"
       }
    },
    "release_status" : "stable",
@@ -160,7 +160,7 @@
          "web" : "https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu"
       }
    },
-   "version" : "0.39",
+   "version" : "0.40",
    "x_contributors" : [
       "Karen Etheridge <ether@cpan.org>",
       "Shantanu Bhadoria <shantanu att cpan dott org>"
