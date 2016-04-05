@@ -12,8 +12,8 @@ branches:
 before_install:
    - rm .travis.yml
    - export AUTHOR_TESTING=0
-   - cpanm Archive::Any::Lite
    - cpanm Archive::Zip
+   - cpanm Archive::Any::Lite
    - cpanm Module::CPANTS::Analyse
    - cpanm Test::Kwalitee
    - cpanm Dist::Zilla::Plugin::Test::Kwalitee::Extra
