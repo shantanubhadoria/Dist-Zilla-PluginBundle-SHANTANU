@@ -19,6 +19,7 @@ branches:
 before_install:
    - rm .travis.yml
    - export AUTHOR_TESTING=0
-   - sudo cpanm Dist::Zilla::Plugin::Test::Kwalitee::Extra
+   - cpanm Archive::Any::Lite
+   - cpanm Dist::Zilla::Plugin::Test::Kwalitee::Extra
 install:
    - cpanm --installdeps --verbose  .

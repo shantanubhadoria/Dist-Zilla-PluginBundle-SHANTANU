@@ -6,15 +6,15 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
     <p>
     <img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="Requires Perl 5.10+" />
     <a href="https://travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU.svg?branch=build/master" alt="Travis status" /></a>
-    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-SHANTANU%200.39"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-PluginBundle-SHANTANU/0.39" alt="CPAN Testers result" /></a>
-    <a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-SHANTANU-0.39"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-PluginBundle-SHANTANU/0.39" alt="Distribution kwalitee" /></a>
+    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-SHANTANU%200.40"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-PluginBundle-SHANTANU/0.40" alt="CPAN Testers result" /></a>
+    <a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-SHANTANU-0.40"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-PluginBundle-SHANTANU/0.40" alt="Distribution kwalitee" /></a>
     <a href="https://gratipay.com/shantanubhadoria"><img src="https://img.shields.io/gratipay/shantanubhadoria.svg" alt="Gratipay" /></a>
     </p>
 </div>
 
 # VERSION
 
-version 0.39
+version 0.40
 
 # SYNOPSIS
 
