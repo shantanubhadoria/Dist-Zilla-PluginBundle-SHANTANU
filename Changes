@@ -1,7 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-SHANTANU
 
-0.41 2016-04-07T03:53:05
- - No changes found
+0.41 2016-04-07T03:53:30
+ - travis root (Shantanu Bhadoria)
 
 0.40 2016-04-07T03:32:17Z
  - fixed perl versions for travis; (Shantanu Bhadoria)
