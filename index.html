@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Perl-dist-zilla-pluginbundle-shantanu by shantanubhadoria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Perl-dist-zilla-pluginbundle-shantanu</h1>
+      <h2 class="project-tagline">Dist::Zilla::PluginBundle::SHANTANU  shantanu&#39;s Dist::Zilla Plugins Bundle</h2>
+      <a href="https://github.com/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU" class="btn">View on GitHub</a>
+      <a href="https://github.com/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="name" class="anchor" href="#name" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NAME</h1>
+
+<p>Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to use it</p>
+
+<div>
+    <p>
+    <img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="Requires Perl 5.10+">
+    <a href="https://travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU.svg?branch=build/master" alt="Travis status"></a>
+    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-SHANTANU%200.41"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="CPAN Testers result"></a>
+    <a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-SHANTANU-0.41"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="Distribution kwalitee"></a>
+    <a href="https://gratipay.com/shantanubhadoria"><img src="https://img.shields.io/gratipay/shantanubhadoria.svg" alt="Gratipay"></a>
+    </p>
+</div>
+
+<h1>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VERSION</h1>
+
+<p>version 0.41</p>
+
+<h1>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SYNOPSIS</h1>
+
+<pre><code># in dist.ini
+  [@SHANTANU]
+</code></pre>
+
+<h1>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DESCRIPTION</h1>
+
+<p>This is a <a href="https://metacpan.org/pod/Dist::Zilla">Dist::Zilla</a> PluginBundle. The way I use it. While this bundle is
+customized to my needs, others might be better of forking this repository and
+modifying it to their own needs or using the more mature Plugin bundles that
+this is derived from like the one by David Golden.</p>
+
+<h1>
+<a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ATTRIBUTES</h1>
+
+<h2>
+<a id="makemaker" class="anchor" href="#makemaker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>makemaker</h2>
+
+<p>makemaker attribute By default uses [MakeMaker::Awesome] This can be overriden by defining this attribute</p>
+
+<h2>
+<a id="skip_makemaker" class="anchor" href="#skip_makemaker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>skip_makemaker</h2>
+
+<p>Skip Default Makemaker option to add your own plugin for generating makefile</p>
+
+<h2>
+<a id="no_git" class="anchor" href="#no_git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>no_git</h2>
+
+<p>no_git attribute</p>
+
+<h2>
+<a id="no_commitbuild" class="anchor" href="#no_commitbuild" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>no_commitbuild</h2>
+
+<p>no_commitbuild attribute, do not create a build branch</p>
+
+<h2>
+<a id="version_regexp" class="anchor" href="#version_regexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>version_regexp</h2>
+
+<p>version_regexp attribute</p>
+
+<h2>
+<a id="is_task" class="anchor" href="#is_task" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>is_task</h2>
+
+<p>Use Taskweaver in lieu of PodWeaver</p>
+
+<h2>
+<a id="weaver_config" class="anchor" href="#weaver_config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>weaver_config</h2>
+
+<p>PodWeaver config_plugin attribute</p>
+
+<h2>
+<a id="no_spellcheck" class="anchor" href="#no_spellcheck" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>no_spellcheck</h2>
+
+<p>Skip spelling checks</p>
+
+<h2>
+<a id="exclude_filename" class="anchor" href="#exclude_filename" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>exclude_filename</h2>
+
+<p>list of filenames to exclude e.g.
+    exclude_filename=dist.ini
+    exclude_filename=META.json
+    exclude_filename=META.yml</p>
+
+<h2>
+<a id="stopwords" class="anchor" href="#stopwords" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>stopwords</h2>
+
+<p>Stopwords to exclude for spell checks in pod</p>
+
+<h2>
+<a id="no_critic" class="anchor" href="#no_critic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>no_critic</h2>
+
+<p>Skip Perl Critic Checks</p>
+
+<h2>
+<a id="no_coverage" class="anchor" href="#no_coverage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>no_coverage</h2>
+
+<p>Skip Pod Coverage tests</p>
+
+<h2>
+<a id="test_compile" class="anchor" href="#test_compile" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>test_compile</h2>
+
+<p>Create compile tests.</p>
+
+<h2>
+<a id="auto_prereq" class="anchor" href="#auto_prereq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>auto_prereq</h2>
+
+<p>Automatically get prerequisites(default 1)</p>
+
+<h2>
+<a id="fake_release" class="anchor" href="#fake_release" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>fake_release</h2>
+
+<h2>
+<a id="tag_regexp" class="anchor" href="#tag_regexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>tag_regexp</h2>
+
+<p>Regex for obtaining the version number from git tag</p>
+
+<h2>
+<a id="compile_for_debian" class="anchor" href="#compile_for_debian" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>compile_for_debian</h2>
+
+<p>generate debian specific files like control etc. Useful if you are using dh-make-perl for building .deb files from your package</p>
+
+<h2>
+<a id="tag_format" class="anchor" href="#tag_format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>tag_format</h2>
+
+<p>Git Tag format</p>
+
+<h2>
+<a id="git_remote" class="anchor" href="#git_remote" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>git_remote</h2>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>USAGE</h1>
+
+<p>To use this PluginBundle, just add it to your dist.ini.  You can provide
+the following options:</p>
+
+<ul>
+<li>
+<code>is_task</code> -- this indicates whether TaskWeaver or PodWeaver should be used.
+Default is 0.</li>
+<li>
+<code>auto_prereq</code> -- this indicates whether AutoPrereq should be used or not.
+Default is 1.</li>
+<li>
+<code>tag_format</code> -- given to <code>Git::Tag</code>.  Default is 'release-%v' to be more
+robust than just the version number when parsing versions for
+<code>Git::NextVersion</code>
+</li>
+<li>
+<code>version_regexp</code> -- given to <code>Git::NextVersion</code>.  Default
+is '^release-(.+)$'</li>
+<li>
+<code>fake_release</code> -- swaps FakeRelease for UploadToCPAN. Mostly useful for
+testing a dist.ini without risking a real release.</li>
+<li>
+<code>weaver_config</code> -- specifies a Pod::Weaver bundle.  Defaults to <a href="https://github.com/SHANTANU" class="user-mention">@SHANTANU</a>.</li>
+<li>
+<code>stopwords</code> -- add stopword for Test::PodSpelling (can be repeated)</li>
+<li>
+<code>no_git</code> -- bypass all git-dependent plugins</li>
+<li>
+<code>no_critic</code> -- omit Test::Perl::Critic tests</li>
+<li>
+<code>no_spellcheck</code> -- omit Test::PodSpelling tests</li>
+<li>
+<code>no_coverage</code> -- omit Pod Coverage tests</li>
+</ul>
+
+<p>When running without git, C is used instead of CGit::GatherDir,
+C is used instead of CGit::NextVersion, and all git check and
+commit operations are disabled.</p>
+
+<p>This PluginBundle now supports ConfigSlicer, so you can pass in options to the
+plugins used like this:</p>
+
+<pre><code>[@SHANTANU]
+ExecDir.dir = scripts ; overrides ExecDir
+</code></pre>
+
+<h1>
+<a id="common-patterns" class="anchor" href="#common-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COMMON PATTERNS</h1>
+
+<h2>
+<a id="use-github-instead-of-rt" class="anchor" href="#use-github-instead-of-rt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>use github instead of RT</h2>
+
+<pre><code>[@SHANTANU]
+:version = 0.32
+AutoMetaResourcesPrefixed.bugtracker.github = user:shantanu
+AutoMetaResourcesPrefixed.bugtracker.rt = 0
+</code></pre>
+
+<h1>
+<a id="see-also" class="anchor" href="#see-also" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SEE ALSO</h1>
+
+<ul>
+<li><a href="https://metacpan.org/pod/Dist::Zilla">Dist::Zilla</a></li>
+<li><a href="https://metacpan.org/pod/Dist::Zilla::Plugin::PodWeaver">Dist::Zilla::Plugin::PodWeaver</a></li>
+<li><a href="https://metacpan.org/pod/Dist::Zilla::Plugin::TaskWeaver">Dist::Zilla::Plugin::TaskWeaver</a></li>
+</ul>
+
+<h1>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SUPPORT</h1>
+
+<h2>
+<a id="bugs--feature-requests" class="anchor" href="#bugs--feature-requests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bugs / Feature Requests</h2>
+
+<p>Please report any bugs or feature requests through github at 
+<a href="https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues">https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues</a>.
+You will be notified automatically of any progress on your issue.</p>
+
+<h2>
+<a id="source-code" class="anchor" href="#source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source Code</h2>
+
+<p>This is open source software.  The code repository is available for
+public review and contribution under the terms of the license.</p>
+
+<p><a href="https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu">https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu</a></p>
+
+<pre><code>git clone git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
+</code></pre>
+
+<h1>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AUTHOR</h1>
+
+<p>Shantanu Bhadoria <a href="mailto:shantanu@cpan.org">shantanu@cpan.org</a> <a href="https://www.shantanubhadoria.com">https://www.shantanubhadoria.com</a></p>
+
+<h1>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CONTRIBUTORS</h1>
+
+<ul>
+<li>Karen Etheridge <a href="mailto:ether@cpan.org">ether@cpan.org</a>
+</li>
+<li>Shantanu Bhadoria &lt;shantanu att cpan dott org&gt;</li>
+</ul>
+
+<h1>
+<a id="copyright-and-license" class="anchor" href="#copyright-and-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COPYRIGHT AND LICENSE</h1>
+
+<p>This software is copyright (c) 2016 by Shantanu Bhadoria.</p>
+
+<p>This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU">Perl-dist-zilla-pluginbundle-shantanu</a> is maintained by <a href="https://github.com/shantanubhadoria">shantanubhadoria</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
