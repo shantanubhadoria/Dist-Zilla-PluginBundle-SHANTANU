@@ -3,7 +3,7 @@ use warnings;
 
 package Badge::Depot::Plugin::Shantanutravis;
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 # Dependencies
 use Moose;
@@ -106,7 +106,7 @@ Badge::Depot::Plugin::Shantanutravis - Shantanu Bhadoria's Travis plugin for Bad
 
 =head1 VERSION
 
-version 0.40
+version 0.41
 
 =head1 ATTRIBUTES
 
