@@ -24,6 +24,7 @@ before_install:
    - cpanm Archive::Any::Lite
    - cpanm Module::CPANTS::Analyse
    - cpanm Test::Kwalitee
+   - cpanm Dist::Zilla::Plugin::MetaProvides::Package
    - cpanm Dist::Zilla::Plugin::Test::Kwalitee::Extra
 install:
    - cpanm --installdeps --verbose  .
