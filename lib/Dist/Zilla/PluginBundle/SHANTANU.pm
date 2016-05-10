@@ -395,19 +395,13 @@ sub configure {
             $self->no_critic ? ()
             : ('Test::Perl::Critic')
         ),
-
-        #[
-        #    'Test::Kwalitee::Extra' => {
-        #        has_corpus => 0,
-        #    },
-        #],
         (
             $self->test_kwalitee
             ? [
                 'Test::Kwalitee::Extra' => {
                     has_corpus => 0,
                 },
-            ],
+              ]
             : ()
         ),
         'MetaTests',         # core
