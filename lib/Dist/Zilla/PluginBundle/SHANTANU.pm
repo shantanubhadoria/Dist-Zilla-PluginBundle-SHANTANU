@@ -5,7 +5,7 @@ package Dist::Zilla::PluginBundle::SHANTANU;
 
 # PODNAME: Dist::Zilla::PluginBundle::SHANTANU
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -198,6 +198,18 @@ has no_coverage => (
 );
 
 
+has test_kwalitee => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{test_kwalitee}
+          ? $_[0]->payload->{test_kwalitee}
+          : 1;
+    },
+);
+
+
 has test_compile => (
     is      => 'ro',
     isa     => 'Bool',
@@ -383,11 +395,21 @@ sub configure {
             $self->no_critic ? ()
             : ('Test::Perl::Critic')
         ),
-        [
-            'Test::Kwalitee::Extra' => {
-                has_corpus => 0,
-            },
-        ],
+
+        #[
+        #    'Test::Kwalitee::Extra' => {
+        #        has_corpus => 0,
+        #    },
+        #],
+        (
+            $self->test_kwalitee
+            ? [
+                'Test::Kwalitee::Extra' => {
+                    has_corpus => 0,
+                },
+            ],
+            : ()
+        ),
         'MetaTests',         # core
         'PodSyntaxTests',    # core
         (
@@ -562,10 +584,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 =begin html
 
 <p>
-<img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="Requires Perl 5.10+" />
 <a href="https://travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU.svg?branch=build/master" alt="Travis status" /></a>
-<a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-SHANTANU%200.41"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="CPAN Testers result" /></a>
-<a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-SHANTANU-0.41"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="Distribution kwalitee" /></a>
 <a href="https://gratipay.com/shantanubhadoria"><img src="https://img.shields.io/gratipay/shantanubhadoria.svg" alt="Gratipay" /></a>
 </p>
 
@@ -573,7 +592,7 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -639,6 +658,10 @@ Skip Perl Critic Checks
 =head2 no_coverage
 
 Skip Pod Coverage tests
+
+=head2 test_kwalitee
+
+Create kwalitee tests.
 
 =head2 test_compile
 

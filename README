@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 0.41
+    version 0.42
 
 SYNOPSIS
 
@@ -71,6 +71,10 @@ ATTRIBUTES
  no_coverage
 
     Skip Pod Coverage tests
+
+ test_kwalitee
+
+    Create kwalitee tests.
 
  test_compile
 
@@ -164,17 +168,15 @@ SUPPORT
  Bugs / Feature Requests
 
     Please report any bugs or feature requests through github at
-    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shanta
-    nu/issues. You will be notified automatically of any progress on your
-    issue.
+    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu/issues.
+    You will be notified automatically of any progress on your issue.
 
  Source Code
 
     This is open source software. The code repository is available for
     public review and contribution under the terms of the license.
 
-    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shanta
-    nu
+    https://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu
 
       git clone git://github.com/shantanubhadoria/perl-dist-zilla-pluginbundle-shantanu.git
 
