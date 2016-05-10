@@ -4,17 +4,14 @@ Dist::Zilla::PluginBundle::SHANTANU - Dist Zilla Plugin Bundle the way I like to
 
 <div>
     <p>
-    <img src="https://img.shields.io/badge/perl-5.10+-brightgreen.svg" alt="Requires Perl 5.10+" />
     <a href="https://travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU"><img src="https://api.travis-ci.org/shantanubhadoria/perl-Dist-Zilla-PluginBundle-SHANTANU.svg?branch=build/master" alt="Travis status" /></a>
-    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-SHANTANU%200.41"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="CPAN Testers result" /></a>
-    <a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-SHANTANU-0.41"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-PluginBundle-SHANTANU/0.41" alt="Distribution kwalitee" /></a>
     <a href="https://gratipay.com/shantanubhadoria"><img src="https://img.shields.io/gratipay/shantanubhadoria.svg" alt="Gratipay" /></a>
     </p>
 </div>
 
 # VERSION
 
-version 0.41
+version 0.42
 
 # SYNOPSIS
 
@@ -80,6 +77,10 @@ Skip Perl Critic Checks
 ## no\_coverage
 
 Skip Pod Coverage tests
+
+## test\_kwalitee
+
+Create kwalitee tests.
 
 ## test\_compile
 
@@ -172,11 +173,11 @@ public review and contribution under the terms of the license.
 
 # AUTHOR
 
-Shantanu Bhadoria <shantanu@cpan.org> [https://www.shantanubhadoria.com](https://www.shantanubhadoria.com)
+Shantanu Bhadoria &lt;shantanu@cpan.org> [https://www.shantanubhadoria.com](https://www.shantanubhadoria.com)
 
 # CONTRIBUTORS
 
-- Karen Etheridge <ether@cpan.org>
+- Karen Etheridge &lt;ether@cpan.org>
 - Shantanu Bhadoria &lt;shantanu att cpan dott org>
 
 # COPYRIGHT AND LICENSE

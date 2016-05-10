@@ -261,6 +261,23 @@ has no_coverage => (
     },
 );
 
+=attr test_kwalitee
+
+Create kwalitee tests.
+
+=cut
+
+has test_kwalitee => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        exists $_[0]->payload->{test_kwalitee}
+          ? $_[0]->payload->{test_kwalitee}
+          : 1;
+    },
+);
+
 =attr test_compile
 
 Create compile tests.
@@ -478,11 +495,15 @@ sub configure {
             $self->no_critic ? ()
             : ('Test::Perl::Critic')
         ),
-        [
-            'Test::Kwalitee::Extra' => {
-                has_corpus => 0,
-            },
-        ],
+        (
+            $self->test_kwalitee
+            ? [
+                'Test::Kwalitee::Extra' => {
+                    has_corpus => 0,
+                },
+            ]
+            : ()
+        ),
         'MetaTests',         # core
         'PodSyntaxTests',    # core
         (
