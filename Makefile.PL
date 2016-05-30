@@ -20,8 +20,10 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::PluginBundle::SHANTANU",
   "PREREQ_PM" => {
     "Badge::Depot" => 0,
+    "Badge::Depot::Plugin::Cpantesters" => 0,
     "Badge::Depot::Plugin::Gratipay" => 0,
-    "Badge::Depot::Plugin::Travis" => 0,
+    "Badge::Depot::Plugin::Kwalitee" => 0,
+    "Badge::Depot::Plugin::Perl" => 0,
     "Dist::Zilla" => "4.3",
     "Dist::Zilla::Plugin::AutoMetaResources" => 0,
     "Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes" => "0.109",
@@ -92,7 +94,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "blib" => "1.01"
   },
-  "VERSION" => "0.42",
+  "VERSION" => "0.43",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -100,8 +102,10 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Badge::Depot" => 0,
+  "Badge::Depot::Plugin::Cpantesters" => 0,
   "Badge::Depot::Plugin::Gratipay" => 0,
-  "Badge::Depot::Plugin::Travis" => 0,
+  "Badge::Depot::Plugin::Kwalitee" => 0,
+  "Badge::Depot::Plugin::Perl" => 0,
   "Dist::Zilla" => "4.3",
   "Dist::Zilla::Plugin::AutoMetaResources" => 0,
   "Dist::Zilla::Plugin::ChangelogFromGit::CPAN::Changes" => "0.109",

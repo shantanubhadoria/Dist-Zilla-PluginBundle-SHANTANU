@@ -3,7 +3,7 @@ use warnings;
 
 package Pod::Weaver::PluginBundle::SHANTANU;
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 use Pod::Weaver 3.101638;
 use Pod::Weaver::Config::Assembler;
@@ -12,7 +12,9 @@ use Pod::Weaver::Config::Assembler;
 use Pod::Weaver::Plugin::WikiDoc ();
 use Pod::Elemental::Transformer::List 0.101620 ();
 use Pod::Weaver::Section::Badges 0.0402        ();
-use Badge::Depot::Plugin::Travis;
+use Badge::Depot::Plugin::Perl;
+use Badge::Depot::Plugin::Kwalitee;
+use Badge::Depot::Plugin::Cpantesters;
 use Badge::Depot::Plugin::Gratipay;
 use Pod::Weaver::Section::Support 1.001      ();
 use Pod::Weaver::Section::Contributors 0.001 ();
@@ -113,7 +115,7 @@ Pod::Weaver::PluginBundle::SHANTANU
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 METHODS
 
